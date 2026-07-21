@@ -2,6 +2,17 @@
 
 Ryan family projects.
 
+## Ryans Go to Ireland · 2026
+
+`ireland/index.html` — the trip page for the August 2026 visit to
+Nana's farm in Co. Galway: a live countdown to landing day, an
+illustrated map of the week's destinations, the day-by-day plan, the
+cousin roster, and a spotter's checklist that remembers ticks on each
+device. Single self-contained file, no build step.
+
+With GitHub Pages enabled it lives at
+`https://paddythesaint.github.io/family/ireland/`.
+
 ## Treasure Tree Bank
 
 `index.html` — the kids' savings page: one treasure tree per kid that
