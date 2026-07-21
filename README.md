@@ -5,10 +5,13 @@ Ryan family projects.
 ## Ryans Go to Ireland · 2026
 
 `ireland/index.html` — the trip page for the August 2026 visit to
-Nana's farm in Co. Galway: a live countdown to landing day, an
-illustrated map of the week's destinations, the day-by-day plan, the
-cousin roster, and a spotter's checklist that remembers ticks on each
-device. Single self-contained file, no build step.
+Nana's farm in Co. Galway: a live countdown to landing day, a daily
+surprise card that unlocks each remaining sleep (Irish words and trip
+facts), a live "meanwhile at the farm" clock and Galway weather
+widget, an illustrated map of the week's destinations, the day-by-day
+plan, the cousin roster, and a spotter's checklist that remembers
+ticks on each device. Single self-contained file, no build step
+(weather comes from the free Open-Meteo API at page load).
 
 With GitHub Pages enabled it lives at
 `https://paddythesaint.github.io/family/ireland/`.

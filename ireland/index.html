@@ -160,6 +160,40 @@
   .spot label:has(input:checked){border-color:var(--green);background:#EFF6EE;text-decoration:line-through;color:#6C7B6F;}
   .spotnote{font-size:.78rem;color:#7A8798;margin-top:10px;font-style:italic;}
 
+  /* ---------- daily unlocks ---------- */
+  .unlockintro{font-size:.9rem;color:#5A6B80;margin:-6px 0 16px;font-style:italic;}
+  .unlocks{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:12px;}
+  .unlock{
+    background:#fff;border:3px solid var(--navy);border-radius:16px;padding:14px;
+    box-shadow:0 4px 0 var(--navy);
+  }
+  .unlock .utag{font-family:var(--data);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sail);}
+  .unlock .udate{float:right;font-family:var(--data);font-size:.6rem;color:#8A97A8;letter-spacing:.1em;}
+  .unlock .ubig{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--navy);margin:6px 0 2px;clear:both;}
+  .unlock .usay{font-family:var(--data);font-size:.72rem;color:var(--green);margin-bottom:4px;}
+  .unlock .utxt{font-size:.85rem;color:#47566A;}
+  .unlock.today{
+    border-color:var(--gold);box-shadow:0 4px 0 var(--gold);background:#FFFBEF;
+    transform:rotate(-.6deg);
+  }
+  .unlock.locked{
+    border:3px dashed #9FB0C4;box-shadow:none;background:#F2F5F8;
+    text-align:center;display:flex;flex-direction:column;justify-content:center;gap:6px;
+  }
+  .unlock.locked .lockico{font-size:1.5rem;}
+  .unlock.locked .utxt{color:#8A97A8;font-family:var(--data);font-size:.72rem;letter-spacing:.08em;}
+
+  /* ---------- live farm widgets ---------- */
+  .live{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;}
+  .livecard{
+    background:#fff;border:3px solid var(--green);border-radius:16px;padding:18px 16px;
+    box-shadow:0 4px 0 var(--green);text-align:center;
+  }
+  .livelbl{font-family:var(--data);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green);}
+  .livebig{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,6vw,2.6rem);color:var(--navy);margin:8px 0 2px;}
+  .livesub{font-weight:700;font-size:.95rem;color:#47566A;}
+  .livefoot{font-family:var(--data);font-size:.68rem;color:#8A97A8;margin-top:6px;}
+
   /* ---------- footer ---------- */
   footer{
     text-align:center;margin-top:70px;color:#7A8798;
@@ -223,6 +257,40 @@
     <div class="stat"><div class="num" id="roadkm">~740 km</div><div class="cap">on Irish roads</div></div>
     <div class="stat"><div class="num">8 cousins</div><div class="cap">waiting at the farm</div></div>
   </div>
+
+  <!-- ================= DAILY UNLOCKS ================= -->
+  <section id="unlocks">
+    <div class="sechead">
+      <span class="stamp">The Wait</span>
+      <h2>One surprise every sleep</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="unlockintro">A new card unlocks every morning between now and takeoff. No peeking at the locked ones — they know.</p>
+    <div class="unlocks" id="unlockgrid"></div>
+  </section>
+
+  <!-- ================= LIVE FROM THE FARM ================= -->
+  <section id="farmlive">
+    <div class="sechead">
+      <span class="stamp">Live ☘</span>
+      <h2>Meanwhile, at Nana's farm…</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="live">
+      <div class="livecard">
+        <div class="livelbl">Farm o'clock</div>
+        <div class="livebig" id="farmclock">–:–</div>
+        <div class="livesub" id="farmphrase">winding the clock…</div>
+        <div class="livefoot" id="farmahead"></div>
+      </div>
+      <div class="livecard">
+        <div class="livelbl">Farm weather right now</div>
+        <div class="livebig" id="farmwx">☁️ –°</div>
+        <div class="livesub" id="farmwxphrase">checking the sky over Galway…</div>
+        <div class="livefoot" id="farmwxf"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= MAP ================= -->
   <section id="map">
@@ -550,6 +618,103 @@
   }
   tick();
   setInterval(tick, 1000);
+
+  // ---------- DAILY UNLOCKS ----------
+  // One card per remaining sleep; a card unlocks when its date arrives (device-local time).
+  const UNLOCKS = [
+    {d:'2026-07-21', tag:'Irish word', big:'Dia dhuit!', say:'JEE-ah GWITCH', txt:'It means hello! Practice it on each other at dinner — it’s how you’ll greet everyone at the farm.'},
+    {d:'2026-07-22', tag:'Farm fact', big:'🐑 Sheep rule the roads', txt:'Ireland has about as many sheep as people. If one blocks the road, you wait — the sheep always wins.'},
+    {d:'2026-07-23', tag:'Irish word', big:'Capall', say:'KOP-ull', txt:'It means horse! You’ll see real racehorses thunder past at the Galway Races.'},
+    {d:'2026-07-24', tag:'Space fact', big:'🔭 The Leviathan', txt:'The giant telescope at Birr Castle was the biggest in the WHOLE WORLD for over 70 years. People sailed across oceans just to look through it.'},
+    {d:'2026-07-25', tag:'Home fact', big:'🏰 Cahertinna', txt:'Nana’s farm is in a townland whose name starts with “Caher” — Irish for STONE FORT. You’re staying somewhere ancient!'},
+    {d:'2026-07-26', tag:'Irish word', big:'Sláinte!', say:'SLAWN-cha', txt:'It means “health!” — it’s what everyone says when they clink glasses. Raise your milk!'},
+    {d:'2026-07-27', tag:'Sea fact', big:'⛵ Red sails', txt:'Galway’s famous boats are called Galway Hookers, and their sails are dark red. Spot one and you can tick a box on the hunt!'},
+    {d:'2026-07-28', tag:'Yum fact', big:'🍦 The 99', txt:'In Ireland, an ice cream cone with a chocolate flake stuck in it is called a 99. Nobody is completely sure why. You must try one. For science.'},
+    {d:'2026-07-29', tag:'Irish word', big:'Go raibh maith agat', say:'guh-rev-MAH-a-gut', txt:'It means thank you — the magic words, Galway edition. Say it after your 99.'},
+    {d:'2026-07-30', tag:'Sky fact', big:'🌈 Rainbow country', txt:'Sunshine, then rain, then sunshine again — Ireland is one of the best places on Earth to catch rainbows. Keep watch from the car.'},
+    {d:'2026-07-31', tag:'Irish word', big:'Slán!', say:'slawn', txt:'It means goodbye. Say it to your bedroom tonight — tomorrow we FLY! 🛫'},
+    {d:'2026-08-01', tag:'☘ The big day', big:'Tá muid anseo!', say:'taw mwidj on-SHUH', txt:'“We are HERE!” Adventure mode: ON.'}
+  ];
+
+  function localISO(dt){
+    const p = n => String(n).padStart(2,'0');
+    return dt.getFullYear()+'-'+p(dt.getMonth()+1)+'-'+p(dt.getDate());
+  }
+
+  function renderUnlocks(){
+    const today = localISO(new Date());
+    document.getElementById('unlockgrid').innerHTML = UNLOCKS.map(u => {
+      const nice = new Date(u.d+'T12:00:00')
+        .toLocaleDateString('en-US',{weekday:'short', month:'short', day:'numeric'});
+      if (u.d > today){
+        const sleeps = Math.round((new Date(u.d+'T12:00:00') - new Date(today+'T12:00:00'))/86400000);
+        return `<div class="unlock locked"><div class="lockico">🔒</div>
+          <div class="utxt">${nice}<br>${sleeps} more sleep${sleeps>1?'s':''}</div></div>`;
+      }
+      const isToday = u.d === today;
+      return `<div class="unlock${isToday?' today':''}">
+        <span class="utag">${isToday?'⭐ Today · ':''}${u.tag}</span><span class="udate">${nice}</span>
+        <div class="ubig">${u.big}</div>
+        ${u.say ? `<div class="usay">say it: “${u.say}”</div>` : ''}
+        <div class="utxt">${u.txt}</div></div>`;
+    }).join('');
+  }
+  renderUnlocks();
+  // re-check at midnight so the next card appears without a reload
+  setInterval(renderUnlocks, 60000);
+
+  // ---------- FARM CLOCK ----------
+  function farmTick(){
+    const now = new Date();
+    document.getElementById('farmclock').textContent =
+      new Intl.DateTimeFormat('en-IE',{timeZone:'Europe/Dublin', hour:'numeric', minute:'2-digit'}).format(now);
+    const h = +new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Dublin', hour:'2-digit', hour12:false}).format(now);
+    let ph;
+    if (h >= 22 || h < 6) ph = 'Everyone at the farm is fast asleep 💤';
+    else if (h < 8)  ph = 'The cousins are just waking up 🥱';
+    else if (h < 9)  ph = 'Breakfast time at the farm 🥣';
+    else if (h < 12) ph = 'Morning jobs — someone’s on the tractor 🚜';
+    else if (h < 13) ph = 'Lunchtime at Nana’s 🥪';
+    else if (h < 17) ph = 'The cousins are playing outside 🌳';
+    else if (h < 19) ph = 'They’re having their tea (that’s Irish for dinner!) 🍽️';
+    else             ph = 'Bath and bedtime at the farm 🛁';
+    document.getElementById('farmphrase').textContent = ph;
+    const dub = new Date(now.toLocaleString('en-US',{timeZone:'Europe/Dublin'}));
+    const ahead = Math.round((dub - now)/3600000);
+    document.getElementById('farmahead').textContent =
+      ahead > 0 ? `Galway is ${ahead} hours ahead of us` : 'Galway time';
+  }
+  farmTick();
+  setInterval(farmTick, 30000);
+
+  // ---------- FARM WEATHER (Open-Meteo, free & keyless) ----------
+  function wxInfo(c){
+    if (c === 0)  return ['☀️','The cows are sunbathing'];
+    if (c <= 2)   return ['🌤️','Sunny spells over the fields'];
+    if (c === 3)  return ['☁️','A soft grey Galway day'];
+    if (c <= 48)  return ['🌫️','The farm is wrapped in a fog blanket'];
+    if (c <= 57)  return ['🌦️','A soft day — drizzly and green'];
+    if (c <= 67)  return ['🌧️','Perfect welly-boot weather!'];
+    if (c <= 77)  return ['❄️','SNOW at the farm?! In summer?!'];
+    if (c <= 82)  return ['🌧️','Rain showers — rainbow watch is ON'];
+    if (c <= 86)  return ['❄️','Snow showers over the fields?!'];
+    return ['⛈️','Thunder rolling over the fields!'];
+  }
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=53.20&longitude=-8.57&current=temperature_2m,weather_code')
+    .then(r => r.json())
+    .then(j => {
+      const cur = j.current;
+      const [ico, ph] = wxInfo(cur.weather_code);
+      const c = Math.round(cur.temperature_2m);
+      const f = Math.round(c * 9/5 + 32);
+      document.getElementById('farmwx').textContent = `${ico} ${c}°C`;
+      document.getElementById('farmwxphrase').textContent = ph;
+      document.getElementById('farmwxf').textContent = `that’s ${f}°F in Virginia money`;
+    })
+    .catch(() => {
+      document.getElementById('farmwx').textContent = '☁️';
+      document.getElementById('farmwxphrase').textContent = 'The weather’s hiding behind a cloud — check back soon.';
+    });
 
   // ---------- SPOTTER'S CHECKLIST (saved per device) ----------
   const SPOT_KEY = 'ireland2026-spotters';
