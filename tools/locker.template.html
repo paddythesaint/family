@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Ryans Go to Ireland · 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap');
+  :root{
+    --navy:#14355C; --green:#2E7D4F; --cream:#FAF6EC; --gold:#E8A83C;
+    --sail:#BE4A2F; --sky:#BFD9E4; --ink:#1D2B3A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--cream);color:var(--ink);
+    font-family:'Nunito','Segoe UI',sans-serif;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+  }
+  .gate{
+    background:#fff;border:3px solid var(--navy);border-radius:20px;
+    box-shadow:0 6px 0 var(--navy);padding:34px 28px;max-width:420px;width:100%;
+    text-align:center;
+  }
+  .lockico{font-size:2.6rem;}
+  .eyebrow{
+    font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--sail);margin-top:10px;
+  }
+  h1{
+    font-family:'Fredoka','Trebuchet MS',sans-serif;font-weight:700;
+    font-size:1.7rem;color:var(--navy);text-transform:uppercase;margin:6px 0 2px;
+  }
+  .ask{font-weight:700;color:#47566A;margin:12px 0 16px;}
+  form{display:flex;flex-direction:column;gap:10px;}
+  input{
+    font:inherit;font-weight:700;text-align:center;
+    border:3px solid var(--sky);border-radius:12px;padding:12px 14px;
+    background:var(--cream);color:var(--ink);
+  }
+  input:focus{outline:3px solid var(--gold);outline-offset:2px;border-color:var(--gold);}
+  button{
+    font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.05rem;cursor:pointer;
+    background:var(--green);color:#fff;border:0;border-radius:12px;padding:12px;
+    box-shadow:0 4px 0 #1F5737;
+  }
+  button:active{transform:translateY(2px);box-shadow:0 2px 0 #1F5737;}
+  .err{
+    color:var(--sail);font-weight:800;font-size:.9rem;margin-top:14px;
+    animation:shake .35s;
+  }
+  @keyframes shake{
+    0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)}
+    50%{transform:translateX(6px)} 75%{transform:translateX(-3px)}
+  }
+  .busy{
+    font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:.2em;
+    text-transform:uppercase;color:#7A8798;
+  }
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+<main>
+  <div class="gate" id="gate" hidden>
+    <div class="lockico">🔒</div>
+    <p class="eyebrow">Family only · shhh</p>
+    <h1>Ryans Go to Ireland</h1>
+    <p class="ask">What's the secret family password?</p>
+    <form id="gateform">
+      <input id="pw" type="password" autocomplete="off" autocapitalize="none"
+             placeholder="whisper it here…" aria-label="Family password">
+      <button type="submit">Open up ☘</button>
+    </form>
+    <p class="err" id="err" hidden>Hmm, that's not it — ask Mom or Dad! 🐑</p>
+  </div>
+  <p class="busy" id="busy">unlocking…</p>
+</main>
+<script>
+const VAULT = /*__VAULT__*/null;
+const KEY = 'ireland2026-key';
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const norm = p => p.toLowerCase().replace(/\s+/g, '');
+
+async function tryUnlock(pwRaw){
+  const pw = norm(pwRaw || '');
+  if (!pw) return false;
+  try {
+    const base = await crypto.subtle.importKey(
+      'raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey(
+      {name:'PBKDF2', salt:b64(VAULT.salt), iterations:VAULT.iter, hash:'SHA-256'},
+      base, {name:'AES-GCM', length:256}, false, ['decrypt']);
+    const plain = await crypto.subtle.decrypt(
+      {name:'AES-GCM', iv:b64(VAULT.iv)}, key, b64(VAULT.ct));
+    localStorage.setItem(KEY, pw);
+    const html = new TextDecoder().decode(plain);
+    document.open(); document.write(html); document.close();
+    return true;
+  } catch (e) { return false; }
+}
+
+const gate = document.getElementById('gate');
+const busy = document.getElementById('busy');
+const err  = document.getElementById('err');
+
+(async () => {
+  const saved = localStorage.getItem(KEY);
+  if (saved && await tryUnlock(saved)) return;
+  localStorage.removeItem(KEY);
+  busy.hidden = true;
+  gate.hidden = false;
+  document.getElementById('pw').focus();
+})();
+
+document.getElementById('gateform').addEventListener('submit', async e => {
+  e.preventDefault();
+  err.hidden = true;
+  busy.hidden = false;
+  const ok = await tryUnlock(document.getElementById('pw').value);
+  if (!ok){
+    busy.hidden = true;
+    err.hidden = false;
+    document.getElementById('pw').select();
+  }
+});
+</script>
+</body>
+</html>

@@ -16,6 +16,19 @@ ticks on each device. Single self-contained file, no build step
 With GitHub Pages enabled it lives at
 `https://paddythesaint.github.io/family/ireland/`.
 
+The page is locked with a shared family password: the committed
+`ireland/index.html` is an unlock screen plus an AES-encrypted vault,
+and the real page only decrypts in the browser once the password is
+typed (it's remembered per device, and case/spaces don't matter). To
+edit the page or change the password, use `tools/cryptpage.mjs`:
+
+    node tools/cryptpage.mjs unlock ireland/index.html page.html <password>
+    ... edit page.html ...
+    node tools/cryptpage.mjs lock page.html ireland/index.html <password>
+
+Never commit the unlocked page, and never write the password anywhere
+in this repo — it is public.
+
 ## Treasure Tree Bank
 
 `index.html` — the kids' savings page: one treasure tree per kid that
