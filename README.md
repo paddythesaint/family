@@ -1,47 +1,62 @@
 # family
 
-Ryan family projects.
+The Ryan family website — a collection of small, self-contained HTML
+pages with no build step, published with GitHub Pages at
+`https://paddythesaint.github.io/family/`.
 
-## Ryans Go to Ireland · 2026
+Because this repository is public, every family page is committed in
+**locked form**: each HTML file is a small unlock screen plus an
+AES-encrypted vault, and the real page only decrypts in the browser
+once the shared family password is typed. The password is remembered
+per device (one unlock opens every page), capitals and spaces don't
+matter, and the password itself is never written anywhere in this
+repo.
 
-`ireland/index.html` — the trip page for the August 2026 visit to
-Nana's farm in Co. Galway: a live countdown to landing day, a daily
-surprise card that unlocks each remaining sleep (Irish words and trip
-facts), a live "meanwhile at the farm" clock and Galway weather
-widget, an illustrated map of the week's destinations, the day-by-day
-plan, the cousin roster, and a spotter's checklist that remembers
-ticks on each device. Single self-contained file, no build step
-(weather comes from the free Open-Meteo API at page load).
+## Pages
 
-With GitHub Pages enabled it lives at
-`https://paddythesaint.github.io/family/ireland/`.
+- **`index.html`** — the family hub. Cards linking to every section.
+- **Treasure Tree Bank** — the kids' savings page lives as a Claude
+  artifact (linked from the nav and hub card). If you ever want it
+  self-hosted alongside the other pages, save that page's HTML here
+  as `bank.html`, lock it, and point the nav links back to it.
+- **`birds.html`** — the family bird life list. Each sighting is one
+  line in the `SIGHTINGS` block (spotter optional — credit chips and
+  the leaderboard appear only when filled in). A built-in
+  `FIELD_GUIDE` adds how common each bird is locally, when it's here,
+  and what it's doing in the current month, plus a "keep an eye out"
+  watch list that automatically drops birds once they're sighted.
+  Ships with clearly-marked sample sightings — replace them and set
+  `SAMPLE_DATA = false`.
+- **`sports.html`** — who's playing what. Per-kid season cards from
+  the `KIDS` block, swim meets in the `SWIM_MEETS` block (charts,
+  personal bests, and podium counts are computed automatically), and
+  a games/camps log in the `LOG` block.
+- **`ireland/index.html`** — Ryans Go to Ireland · 2026, the trip
+  page for the August visit to Nana's farm in Co. Galway: countdown
+  to landing day, a daily surprise card per remaining sleep, a live
+  "meanwhile at the farm" clock and Galway weather widget, the week's
+  adventure map, day-by-day plan, cousin roster, and a spotter's
+  checklist that remembers ticks per device.
 
-The page is locked with a shared family password: the committed
-`ireland/index.html` is an unlock screen plus an AES-encrypted vault,
-and the real page only decrypts in the browser once the password is
-typed (it's remembered per device, and case/spaces don't matter). To
-edit the page or change the password, use `tools/cryptpage.mjs`:
+## Editing a locked page
 
-    node tools/cryptpage.mjs unlock ireland/index.html page.html <password>
-    ... edit page.html ...
-    node tools/cryptpage.mjs lock page.html ireland/index.html <password>
+Pages are edited by unlocking to a scratch file, editing, and
+re-locking (requires Node, no dependencies):
 
-Never commit the unlocked page, and never write the password anywhere
-in this repo — it is public.
+    node tools/cryptpage.mjs unlock sports.html page.html <password>
+    ... edit page.html — data blocks are near the top of its <script> ...
+    node tools/cryptpage.mjs lock page.html sports.html <password> The Ryan Family
 
-## Treasure Tree Bank
+The trailing words are the title shown on that page's unlock screen
+(the Ireland page uses "Ryans Go to Ireland"). Running `lock` with a
+new password is how the password gets changed — do it for every page
+so one unlock still opens the whole site. Never commit an unlocked
+page, and never write the password anywhere in this repo.
 
-`index.html` — the kids' savings page: one treasure tree per kid that
-grows with their balance, an interest ("magic money") explainer, a
-growth chart, and a passbook ledger. It is a single self-contained
-file with no build step.
+## Conventions
 
-The numbers come from the "Kids Bank Statement" Google Sheet (one tab
-per kid). To update the page, edit the `DATA` block near the top of
-the `<script>` in `index.html` — add one row per new spreadsheet
-entry, deposits positive, withdrawals negative. Balances, interest
-totals, the tree, and the chart are all computed from those rows.
-
-To host it with GitHub Pages: repo Settings → Pages → deploy from the
-`main` branch root. (On a free GitHub plan, Pages requires the repo to
-be public.)
+Every page is one file: shared nav at the top, tokens for light/dark
+themes, data blocks at the top of the script, content rendered with
+vanilla JS. To add a new section, copy the structure of `birds.html`,
+pick an accent color, add a card to `index.html`, and lock it before
+committing.
