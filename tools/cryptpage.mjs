@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Lock or unlock a family page with a shared password.
 //
-//   node tools/cryptpage.mjs lock   <plain.html>  <locked.html> <password>
+//   node tools/cryptpage.mjs lock   <plain.html>  <locked.html> <password> [title...]
 //   node tools/cryptpage.mjs unlock <locked.html> <plain.html>  <password>
 //
 // "lock" wraps the page in tools/locker.template.html with the content
@@ -18,8 +18,8 @@ import { fileURLToPath } from 'node:url';
 const ITER = 600000;
 const norm = p => p.toLowerCase().replace(/\s+/g, '');
 
-const [mode, inFile, outFile, ...pwParts] = process.argv.slice(2);
-const password = pwParts.join(' ');
+const [mode, inFile, outFile, password, ...titleParts] = process.argv.slice(2);
+const title = titleParts.join(' ') || 'The Ryan Family';
 if (!['lock', 'unlock'].includes(mode) || !inFile || !outFile || !password) {
   console.error('usage: node tools/cryptpage.mjs lock|unlock <in> <out> <password>');
   process.exit(1);
@@ -45,7 +45,7 @@ if (mode === 'lock') {
     console.error('locker.template.html is missing the /*__VAULT__*/null placeholder');
     process.exit(1);
   }
-  writeFileSync(outFile, tpl.replace('/*__VAULT__*/null', vault));
+  writeFileSync(outFile, tpl.replace('/*__VAULT__*/null', vault).replaceAll('__TITLE__', title));
   console.log(`locked ${inFile} -> ${outFile} (${ct.length} bytes encrypted)`);
 } else {
   const locked = readFileSync(inFile, 'utf8');
