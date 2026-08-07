@@ -54,11 +54,14 @@ body.guides .page::before{ /* trim line */
 body.guides .page::after{ /* safe zone */
   inset:var(--safe);border:0.5pt dotted rgba(38,91,107,.45);
 }
+body{counter-reset:pg;}
+.page{counter-increment:pg;}
 body.guides .pageno-tag{
   position:absolute;top:.16in;left:50%;transform:translateX(-50%);
   font:700 7pt 'Space Mono',monospace;color:#fff;background:var(--navy);
   padding:.02in .08in;border-radius:.06in;z-index:61;opacity:.85;
 }
+body.guides .pageno-tag::before{content:'p' counter(pg) ' · ';}
 body:not(.guides) .pageno-tag{display:none;}
 
 /* ---- typography ---- */

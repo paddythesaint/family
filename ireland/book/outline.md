@@ -35,20 +35,21 @@ spread is the **shot list** to pull from Google Photos when curating.
 | 1 | **Title page** — title lockup, hooker sail motif, "1–8 August 2026" | none (or 1 tiny inset) |
 | 2–3 | **The map** — illustrated Co. Galway map of the whole week: farm at centre, routes to Dublin, Ballybrit, Birr, Wildlands, Shannon, Traught/Kinvara | none |
 | 4–5 | **The crew** — portrait chips: Evelyn, Michael, Catherine; cousins Alice, Ruth, Tiernan, Eolann, Caimin, Senán, Alannah; the grown-ups; Nana Brigid | 12–15 small portraits |
-| 6–7 | **Day 1 · Getting there** — Dulles, the night flight (EI 118), landing at 8:55, the drive west, arriving at the farm; Martin's birthday cake that evening | 4–6: airport/plane, sleepy arrivals, first farm moment, birthday cake |
+| 6–7 | **Day 1 · Getting there** — Dulles, the night flight (EI 118), landing at 8:55, the drive west, arriving at the farm; Martin's **40th** that evening | 4–6: airport/plane, sleepy arrivals, first farm moment, the 40th cake |
 | 8–9 | **The farm** — Cahertinna House life: Nana's kitchen, the yard, wellies, animals, everyday magic | 5–7 candids |
-| 10–11 | **Day 2 · Galway Races** — Grandad's anniversary mass in the morning (small, gentle note), then dress-up and the family day at Ballybrit | 4–6: dressed up, parade ring, grandstand, kids' activities |
-| 12–13 | **Day 3 · Birr Castle** — bank-holiday outing: gardens, science centre, the Great Telescope | 4–6: telescope hero shot, gardens, picnic/café |
+| 10–11 | **Day 2 · Galway Races** — Grandad's anniversary mass in the morning (small, gentle note), then dress-up and the family day at Ballybrit — **Evelyn backed a winner and collected €30** | 4–6: dressed up, parade ring, the winning ticket + €30 |
+| 12–13 | **Day 3 · Birr Castle** — bank-holiday outing: gardens, science centre, the Great Telescope, and a visit with **Auntie Miriam** | 4–6: telescope hero shot, gardens, with Miriam |
 | 14–15 | **Day 4 · Wildlands** — ziplines, mini land rovers, diggers, fairy walk | 4–6 action shots |
-| 16–17 | **Day 5 · Mam's home + Traught beach** — Shannon arrivals hug, then picnic, shells and rockpools | 4–6: airport hug, beach wide shot, rockpool close-ups |
-| 18–19 | **Day 6 · The in-between day** — Velorail if it happened, otherwise farm downtime; brothers' pints that evening | 3–5 |
-| 20–21 | **Day 7 · Boats and a send-off** — Cruinniú na mBád hookers at Kinvara (if visited), packing, the BBQ + movie night at Nana's | 4–6: red sails, BBQ, cousins in pyjamas |
-| 22–23 | **The annual cousins photo** — full-bleed hero spread, one line of caption | 1 (the big one) + optional past-years strip |
-| 24–25 | **Little moments** — candid grid from the unstructured hours (the real point of the week) | 8–12 candids |
-| 26–27 | **Things we spotted** — illustrated spotter's checklist (echoes the trip page): sheep, tractors, rainbows, swallows, hookers… with photo proof where it exists | 4–8 small |
-| 28–29 | **In their own words** — one panel per kid: favourite memory quote + a framed slot for a drawing or scan | 3 portraits + optional drawing scans |
-| 30–31 | **Home again** — the 6:15am start, Dublin, landing at Dulles; "Until next summer, Ireland." | 2–4: goodbye at the farm, plane window |
-| 32 | **Colophon** — sailboat motif, "Made with love · August 2026" | none |
+| 16–17 | **Day 5 · Mam's home + the Burren** — Shannon arrivals hug, Aillwee Caves, birds of prey; full-bleed hero of Michael with the hawk on his glove (kite in the display too — confirm species from photos) | 4–6: airport hug, cave, THE hawk shot |
+| 18–19 | **Day 5 · Flaggy Shore** — limestone, rockpools, meeting Martin & Alice on the shore | 4–6: beach wide, rockpools, with Martin & Alice |
+| 20–21 | **Day 6 · Town & a barbecue** — Galway shopping morning (clothes all round, books for the girls, Lego for Michael), BBQ at Michael & Aisling's in Lurgan; brothers' pints card | 4–6: town, the haul, BBQ crowd |
+| 22–23 | **Day 7 · Over to Francis & Kate's** — Bridgefield, cousins in the grass, every house visited | 4–6 candids |
+| 24–25 | **The annual cousins photo** — full-bleed hero spread; taken this year in the long grass at Francis & Kate's | 1 (the big one) + optional past-years strip |
+| 26–27 | **Little moments** — candid grid from the unstructured hours (the real point of the week) | 8–12 candids |
+| 28–29 | **Things we spotted** — illustrated spotter's checklist (echoes the trip page): sheep, tractors, rainbows, swallows, hookers… with photo proof where it exists | 4–8 small |
+| 30–31 | **In their own words** — one panel per kid: favourite memory quote + a framed slot for a drawing or scan | 3 portraits + optional drawing scans |
+| 32–33 | **Home again** — the 6:15am start, Dublin, landing at Dulles; "Until next summer, Ireland." | 2–4: goodbye at the farm, plane window |
+| 34 | **Colophon** — sailboat motif, "Made with love · August 2026" | none |
 
 **Flex points** (if curation turns up more keepers, grow toward 40
 pages): a second farm spread after 8–9, per-day overflow grids after
@@ -58,12 +59,26 @@ Blurb needs an even page count; minimum 20.
 ## Caption style
 
 Short, specific, read-aloud-able. Date chips in Space Mono. Example:
-> *Sunday 2 August · Ballybrit* — First race at two o'clock. Catherine
-> backed the grey because "he looked friendliest." He came fourth.
+> *Sunday 2 August · Ballybrit* — First race at two o'clock. Evelyn
+> studied the card, backed her horse, and collected thirty euro at
+> the window.
 
 Placeholder captions in the storyboard are drafts from the itinerary —
 they get rewritten against the real photos, and a few blanks are left
 for stories only ye know.
+
+## Still to confirm against the photos
+
+- Did **Wildlands** (Tue) happen as planned? Spread stays until confirmed.
+- Was the Kinvara boats morning dropped? (Hookers now appear as motif only.)
+- Hawk species from the Aillwee birds-of-prey photos (Harris's hawk is
+  their usual glove bird; a kite flew in the display).
+- Day order for the Burren run (caves → Flaggy Shore assumed same day
+  as the Shannon pickup) — verify against photo timestamps/GPS.
+
+**GPS note:** Google strips location EXIF from shared-album downloads
+by default. To sequence pages by place/time, get originals via Google
+Takeout or a Drive upload — those keep full EXIF (timestamps + GPS).
 
 ## Production plan
 
