@@ -6,10 +6,12 @@
 
 A 32–40 page hardcover keepsake of the August 2026 week at Nana
 Brigid's farm — **photos carry the memories, illustration carries the
-storybook feel**. The design language is lifted straight from the
-family site's Ireland trip page (navy / green / cream / gold / sail
-red, Fredoka display type, Nunito body), so the book reads as the
-final chapter of the same adventure the countdown page began.
+storybook feel**. The design language is an homage to Fuchsia
+MacAree's illustrations for *The Great Irish Weather Book* (Joanna
+Donnelly, Gill Books): flat borderless shapes, warm cream paper, a
+teal / coral / mustard / blush / sage palette, petal-ray suns and
+blobby clouds, and chunky multi-coloured display caps (Baloo 2, with
+Nunito for body text). Style homage only — no artwork is copied.
 
 - **Format:** Blurb Standard Square, 8.5×8.5 in hardcover (ImageWrap)
 - **Copies:** 7 — one each for Evelyn, Michael and Catherine, and one

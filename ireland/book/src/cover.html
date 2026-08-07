@@ -12,17 +12,18 @@
 :root{ --coverW:18.25in; --coverH:9.25in; --spine:0.375in; --wrap:0.375in; }
 @page{size:var(--coverW) var(--coverH);margin:0;}
 .cover{position:relative;width:var(--coverW);height:var(--coverH);
-  background:var(--navy);overflow:hidden;color:var(--cream);}
+  background:var(--cream);overflow:hidden;color:var(--ink);}
 .panel{position:absolute;top:0;height:100%;}
 .back{left:0;width:calc((var(--coverW) - var(--spine)) / 2);}
 .front{right:0;width:calc((var(--coverW) - var(--spine)) / 2);}
 .spine{left:calc((var(--coverW) - var(--spine)) / 2);width:var(--spine);
   background:var(--sail);display:flex;align-items:center;justify-content:center;}
-.spine .txt{writing-mode:vertical-rl;font-family:'Fredoka';font-weight:600;
-  color:var(--cream);font-size:13pt;letter-spacing:.12em;white-space:nowrap;}
+.spine .txt{writing-mode:vertical-rl;font-family:'Baloo 2';font-weight:700;
+  color:var(--cream);font-size:13pt;letter-spacing:.14em;white-space:nowrap;}
 /* keep essentials inside wrap + safe */
 .panel .safe{position:absolute;inset:calc(var(--wrap) + .5in);}
-body.guides .panel{outline:.5pt dashed rgba(232,168,60,.9);outline-offset:calc(-1 * var(--wrap));}
+body.guides .panel{outline:.5pt dashed rgba(237,175,63,.9);outline-offset:calc(-1 * var(--wrap));}
+.spot-ico{position:absolute;z-index:1;}
 </style>
 </head>
 <body class="guides">
@@ -30,22 +31,27 @@ body.guides .panel{outline:.5pt dashed rgba(232,168,60,.9);outline-offset:calc(-
 
   <!-- BACK PANEL -->
   <div class="panel back">
+    <!-- scattered spot illustrations, MacAree-style -->
+    <svg class="spot-ico" style="left:8%;top:8%;width:.75in;height:.75in;" viewBox="0 0 100 100"><use href="#raincloud"/></svg>
+    <svg class="spot-ico" style="right:10%;top:12%;width:.65in;height:.65in;" viewBox="0 0 100 100"><use href="#shamrock"/></svg>
+    <svg class="spot-ico" style="left:10%;bottom:14%;width:.8in;height:.8in;" viewBox="0 0 100 100"><use href="#sheep"/></svg>
+    <svg class="spot-ico" style="right:9%;bottom:10%;width:.85in;height:.85in;" viewBox="0 0 100 100"><use href="#rainbow"/></svg>
     <div class="safe" style="display:flex;flex-direction:column;justify-content:space-between;">
-      <div style="display:flex;gap:.14in;justify-content:center;margin-top:.2in;">
-        <div class="slot" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC1</span><span class="want">mini photo</span></div></div>
-        <div class="slot" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC2</span><span class="want">mini photo</span></div></div>
-        <div class="slot" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC3</span><span class="want">mini photo</span></div></div>
+      <div style="display:flex;gap:.14in;justify-content:center;margin-top:.25in;">
+        <div class="slot frame" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC1</span><span class="want">mini photo</span></div></div>
+        <div class="slot frame" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC2</span><span class="want">mini photo</span></div></div>
+        <div class="slot frame" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC3</span><span class="want">mini photo</span></div></div>
       </div>
       <div style="text-align:center;">
-        <div class="body" style="color:var(--sky);max-width:5in;margin:0 auto;line-height:1.6;">
+        <div class="body" style="max-width:5in;margin:0 auto;line-height:1.65;font-weight:700;color:#4A5B5F;">
           Seven days in the West of Ireland: one farm, ten cousins,
           four houses, two airports, one enormous telescope,
           several million sheep — and the annual photo to prove it.
         </div>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;gap:.15in;">
-        <svg width=".45in" height=".45in" viewBox="0 0 100 100"><use href="#shamrock"/></svg>
-        <div class="eyebrow" style="color:var(--gold);">A Ryan Family Production · 2026</div>
+        <svg width=".4in" height=".4in" viewBox="0 0 100 100"><use href="#hooker"/></svg>
+        <div class="eyebrow">A Ryan Family Production · 2026</div>
       </div>
     </div>
   </div>
@@ -55,32 +61,87 @@ body.guides .panel{outline:.5pt dashed rgba(232,168,60,.9);outline-offset:calc(-
 
   <!-- FRONT PANEL -->
   <div class="panel front">
-    <div class="safe" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:.2in;">
-      <div class="eyebrow" style="color:var(--gold);margin-top:.1in;">The Ryan Family</div>
-      <h1 style="font-size:38pt;color:var(--cream);">Ryans Go<br>to Ireland</h1>
-      <div class="datechip" style="background:var(--gold);color:var(--navy);">1 – 8 AUGUST 2026</div>
-      <div class="slot grow" style="width:100%;"><div><span class="tag">COVER HERO</span><span class="want">Front-cover photo — the annual cousins photo, or the best beach/farm shot</span></div></div>
+    <svg class="spot-ico" style="left:7%;top:6%;width:.9in;height:.9in;" viewBox="0 0 100 100"><use href="#sun"/></svg>
+    <svg class="spot-ico" style="right:7%;top:9%;width:.85in;height:.6in;" viewBox="0 0 100 70"><use href="#cloud" transform="translate(0,-15)"/></svg>
+    <svg class="spot-ico" style="left:8%;bottom:8%;width:.8in;height:.8in;" viewBox="0 0 100 100"><use href="#swallow"/></svg>
+    <svg class="spot-ico" style="right:8%;bottom:7%;width:.9in;height:.9in;" viewBox="0 0 100 100"><use href="#tractor"/></svg>
+    <div class="safe" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:.18in;">
+      <div class="eyebrow" style="margin-top:.05in;">The Ryan Family</div>
+      <h1 class="mc" style="font-size:40pt;"><span class="w2">Ryans</span> <span class="w1">Go</span><br><span class="w3">to</span> <span class="w4">Ireland</span></h1>
+      <div class="datechip">1 – 8 AUGUST 2026</div>
+      <div class="slot grow frame" style="width:92%;"><div><span class="tag">COVER HERO</span><span class="want">Front-cover photo — the annual cousins photo, or the best beach/farm shot</span></div></div>
       <svg width="1in" height=".55in" viewBox="0 0 100 100"><use href="#hooker"/></svg>
     </div>
   </div>
 
 </div>
 
-<!-- icon defs reused from interior -->
+<!-- icon defs (flat set, matches interior) -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <g id="hooker">
-      <path d="M12 72 Q50 84 88 72 L80 88 Q50 96 20 88 Z" fill="#FAF6EC"/>
-      <rect x="49" y="14" width="3" height="60" fill="#E8A83C"/>
-      <path d="M49 18 Q20 46 46 70 L49 70 Z" fill="#BE4A2F"/>
-      <path d="M52 14 Q88 40 55 70 L52 70 Z" fill="#A63E26"/>
+      <path d="M12 72 Q50 84 88 72 L80 88 Q50 96 20 88 Z" fill="#265B6B"/>
+      <rect x="49" y="14" width="4" height="60" fill="#EDAF3F"/>
+      <path d="M49 18 Q18 46 46 70 L49 70 Z" fill="#E5654A"/>
+      <path d="M53 14 Q90 40 56 70 L53 70 Z" fill="#C1543C"/>
     </g>
     <g id="shamrock">
-      <circle cx="38" cy="34" r="17" fill="#2E7D4F"/>
-      <circle cx="62" cy="34" r="17" fill="#2E7D4F"/>
-      <circle cx="50" cy="55" r="17" fill="#2E7D4F"/>
-      <circle cx="50" cy="41" r="12" fill="#2E7D4F"/>
-      <path d="M50 60 Q46 78 38 88" stroke="#1F5737" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <circle cx="38" cy="34" r="17" fill="#6FA477"/>
+      <circle cx="62" cy="34" r="17" fill="#6FA477"/>
+      <circle cx="50" cy="55" r="17" fill="#6FA477"/>
+      <circle cx="50" cy="41" r="12" fill="#6FA477"/>
+      <path d="M50 60 Q46 78 38 88" stroke="#4C7F56" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="sheep">
+      <circle cx="38" cy="50" r="15" fill="#FFFDF8"/>
+      <circle cx="55" cy="44" r="16" fill="#FFFDF8"/>
+      <circle cx="68" cy="54" r="13" fill="#FFFDF8"/>
+      <ellipse cx="52" cy="58" rx="28" ry="17" fill="#FFFDF8"/>
+      <circle cx="24" cy="50" r="10" fill="#33403F"/>
+      <circle cx="21" cy="47" r="2.5" fill="#FFFDF8"/>
+      <rect x="38" y="70" width="5" height="16" rx="2.5" fill="#33403F"/>
+      <rect x="60" y="70" width="5" height="16" rx="2.5" fill="#33403F"/>
+    </g>
+    <g id="swallow">
+      <path d="M8 40 Q34 26 50 40 Q66 26 92 40 Q66 44 58 58 L64 88 L50 62 L36 88 L42 58 Q34 44 8 40Z" fill="#265B6B"/>
+    </g>
+    <g id="tractor">
+      <circle cx="30" cy="72" r="18" fill="#33403F"/><circle cx="30" cy="72" r="8" fill="#EDAF3F"/>
+      <circle cx="74" cy="78" r="11" fill="#33403F"/><circle cx="74" cy="78" r="4.5" fill="#EDAF3F"/>
+      <path d="M18 54 L52 54 L52 30 L68 30 L74 50 L86 52 L86 68 L60 68 Z" fill="#6FA477"/>
+      <rect x="54" y="34" width="12" height="12" fill="#CDE4DF"/>
+      <rect x="20" y="24" width="5" height="14" fill="#33403F"/>
+    </g>
+    <g id="rainbow">
+      <path d="M10 88 Q50 -6 90 88" stroke="#E5654A" stroke-width="8" fill="none"/>
+      <path d="M22 88 Q50 14 78 88" stroke="#EDAF3F" stroke-width="8" fill="none"/>
+      <path d="M34 88 Q50 34 66 88" stroke="#6FA477" stroke-width="8" fill="none"/>
+      <path d="M46 88 Q50 56 54 88" stroke="#CDE4DF" stroke-width="8" fill="none"/>
+    </g>
+    <g id="sun">
+      <g fill="#EDAF3F">
+        <path d="M50 4 L57 26 L43 26 Z"/><path d="M50 96 L57 74 L43 74 Z"/>
+        <path d="M4 50 L26 43 L26 57 Z"/><path d="M96 50 L74 43 L74 57 Z"/>
+        <path d="M18 18 L37 28 L28 37 Z"/><path d="M82 82 L63 72 L72 63 Z"/>
+        <path d="M82 18 L72 37 L63 28 Z"/><path d="M18 82 L28 63 L37 72 Z"/>
+      </g>
+      <circle cx="50" cy="50" r="22" fill="#E5654A"/>
+      <circle cx="50" cy="50" r="15" fill="#EDAF3F"/>
+    </g>
+    <g id="cloud">
+      <circle cx="34" cy="52" r="16" fill="#FFFDF8"/>
+      <circle cx="52" cy="44" r="19" fill="#FFFDF8"/>
+      <circle cx="70" cy="54" r="14" fill="#FFFDF8"/>
+      <rect x="22" y="52" width="60" height="16" rx="8" fill="#FFFDF8"/>
+    </g>
+    <g id="raincloud">
+      <circle cx="34" cy="40" r="14" fill="#8FB8B0"/>
+      <circle cx="52" cy="33" r="17" fill="#8FB8B0"/>
+      <circle cx="68" cy="42" r="12" fill="#8FB8B0"/>
+      <rect x="22" y="40" width="58" height="14" rx="7" fill="#8FB8B0"/>
+      <g stroke="#3D8C93" stroke-width="5" stroke-linecap="round">
+        <path d="M34 64 L29 78 M50 64 L45 78 M66 64 L61 78"/>
+      </g>
     </g>
   </defs>
 </svg>

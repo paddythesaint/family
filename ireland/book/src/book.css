@@ -1,12 +1,16 @@
 /* Ryans Go to Ireland · 2026 — book interior styles
+   Visual language: homage to Fuchsia MacAree's illustration style
+   (The Great Irish Weather Book) — flat borderless shapes, warm
+   cream paper, teal/coral/mustard/blush palette, chunky rounded
+   display caps, playful spot illustrations.
    Geometry: Blurb Standard Square. Trim 8.5×8.5in, bleed 0.125in
    → every .page renders at 8.75×8.75in. Safe zone: keep content
    0.625in from the page edge (0.5in inside trim). */
 
-@font-face{font-family:'Fredoka';font-weight:400;src:url(fonts/fredoka-latin-400-normal.woff2) format('woff2');}
-@font-face{font-family:'Fredoka';font-weight:500;src:url(fonts/fredoka-latin-500-normal.woff2) format('woff2');}
-@font-face{font-family:'Fredoka';font-weight:600;src:url(fonts/fredoka-latin-600-normal.woff2) format('woff2');}
-@font-face{font-family:'Fredoka';font-weight:700;src:url(fonts/fredoka-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Baloo 2';font-weight:500;src:url(fonts/baloo-2-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'Baloo 2';font-weight:600;src:url(fonts/baloo-2-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'Baloo 2';font-weight:700;src:url(fonts/baloo-2-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Baloo 2';font-weight:800;src:url(fonts/baloo-2-latin-800-normal.woff2) format('woff2');}
 @font-face{font-family:'Nunito';font-weight:400;src:url(fonts/nunito-latin-400-normal.woff2) format('woff2');}
 @font-face{font-family:'Nunito';font-weight:700;src:url(fonts/nunito-latin-700-normal.woff2) format('woff2');}
 @font-face{font-family:'Nunito';font-weight:800;src:url(fonts/nunito-latin-800-normal.woff2) format('woff2');}
@@ -14,9 +18,13 @@
 @font-face{font-family:'Space Mono';font-weight:700;src:url(fonts/space-mono-latin-700-normal.woff2) format('woff2');}
 
 :root{
-  --navy:#14355C; --green:#2E7D4F; --cream:#FAF6EC; --gold:#E8A83C;
-  --sail:#BE4A2F; --sky:#BFD9E4; --ink:#1D2B3A;
-  --green-dk:#1F5737; --sky-soft:#E4F0F5; --gold-soft:#F7E3BC;
+  /* palette — MacAree-ish. Variable names kept from v1 so existing
+     markup re-skins automatically: navy≈petrol, green≈grass,
+     gold≈mustard, sail≈coral, sky≈pale aqua. */
+  --navy:#265B6B; --green:#6FA477; --cream:#F9F1E0; --gold:#EDAF3F;
+  --sail:#E5654A; --sky:#CDE4DF; --ink:#33403F;
+  --green-dk:#4C7F56; --sky-soft:#E7F0E9; --gold-soft:#F6DFAE;
+  --blush:#EFC3AD; --petrol-dk:#1E4855;
   --bleed:0.125in; --safe:0.625in; /* from page edge */
 }
 
@@ -30,7 +38,7 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);
   position:relative;width:8.75in;height:8.75in;overflow:hidden;
   background:var(--cream);break-after:page;page-break-after:always;
 }
-.page.white{background:#fff;}
+.page.white{background:#FFFDF8;}
 .page.navy{background:var(--navy);color:var(--cream);}
 
 /* content region respecting the safe zone */
@@ -41,10 +49,10 @@ body.guides .page::before,body.guides .page::after{
   content:'';position:absolute;pointer-events:none;z-index:60;
 }
 body.guides .page::before{ /* trim line */
-  inset:var(--bleed);border:0.5pt dashed rgba(190,74,47,.8);
+  inset:var(--bleed);border:0.5pt dashed rgba(229,101,74,.8);
 }
 body.guides .page::after{ /* safe zone */
-  inset:var(--safe);border:0.5pt dotted rgba(20,53,92,.45);
+  inset:var(--safe);border:0.5pt dotted rgba(38,91,107,.45);
 }
 body.guides .pageno-tag{
   position:absolute;top:.16in;left:50%;transform:translateX(-50%);
@@ -54,56 +62,58 @@ body.guides .pageno-tag{
 body:not(.guides) .pageno-tag{display:none;}
 
 /* ---- typography ---- */
-.eyebrow{font-family:'Space Mono',monospace;letter-spacing:.26em;
-  text-transform:uppercase;font-size:8.5pt;color:var(--sail);}
+.eyebrow{font-family:'Baloo 2';font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;font-size:9pt;color:var(--sail);}
 .navy .eyebrow{color:var(--gold);}
-h1{font-family:'Fredoka';font-weight:700;color:var(--navy);
-  text-transform:uppercase;line-height:1.04;}
-h2{font-family:'Fredoka';font-weight:600;color:var(--navy);
-  font-size:22pt;line-height:1.1;}
+h1{font-family:'Baloo 2';font-weight:800;color:var(--navy);
+  text-transform:uppercase;line-height:.98;letter-spacing:.01em;}
+h2{font-family:'Baloo 2';font-weight:700;color:var(--navy);
+  font-size:22pt;line-height:1.06;}
 .navy h1,.navy h2{color:var(--cream);}
+/* multicolour word treatment for big titles (Weather Book cover feel) */
+.mc .w1{color:var(--navy);} .mc .w2{color:var(--sail);}
+.mc .w3{color:var(--green);} .mc .w4{color:var(--gold);}
+.navy .mc .w1{color:var(--cream);} .navy .mc .w3{color:var(--sky);}
 .lede{font-size:11.5pt;line-height:1.55;}
 .body{font-size:10.5pt;line-height:1.55;}
-.datechip{display:inline-block;font:700 8pt 'Space Mono',monospace;
-  background:var(--navy);color:var(--cream);border-radius:.09in;
-  padding:.035in .1in;letter-spacing:.06em;}
+.datechip{display:inline-block;font-family:'Baloo 2';font-weight:700;
+  font-size:9pt;letter-spacing:.1em;background:var(--gold);
+  color:var(--petrol-dk);border-radius:.12in;padding:.03in .12in;}
 
 /* ---- day opener band ---- */
 .dayband{display:flex;align-items:center;gap:.18in;margin-bottom:.14in;}
 .daybadge{
-  width:.72in;height:.72in;border-radius:50%;background:var(--green);
-  color:#fff;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;font-family:'Fredoka';line-height:1;
-  border:3px solid var(--green-dk);flex:none;
+  width:.72in;height:.72in;border-radius:50%;background:var(--sail);
+  color:var(--cream);display:flex;flex-direction:column;align-items:center;
+  justify-content:center;font-family:'Baloo 2';line-height:1;flex:none;
 }
-.daybadge .n{font-weight:700;font-size:20pt;}
+.daybadge .n{font-weight:800;font-size:20pt;}
 .daybadge .lbl{font-weight:600;font-size:6.5pt;text-transform:uppercase;letter-spacing:.08em;}
 .daytitle h2{font-size:24pt;}
-.daytitle .datechip{margin-top:.05in;}
+.daytitle .datechip{margin-top:.04in;}
 
 /* ---- photo slots (storyboard placeholders) ---- */
 .slot{
-  position:relative;background:var(--sky-soft);
-  border:2.5px dashed #8FB4C4;border-radius:.1in;
+  position:relative;background:var(--sky);
+  border:2.5px dashed #8FB8B0;border-radius:.12in;
   display:flex;align-items:center;justify-content:center;
   text-align:center;padding:.15in;overflow:hidden;
 }
 .slot .tag{font:700 8pt 'Space Mono',monospace;color:var(--navy);opacity:.75;
   display:block;margin-bottom:.05in;}
-.slot .want{font:700 9.5pt 'Nunito';color:#47566A;line-height:1.35;}
+.slot .want{font:700 9.5pt 'Nunito';color:#4A5B5F;line-height:1.35;}
 .slot.hero{border-radius:0;border-width:3px;}
 .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.slot:has(img){border:none;background:none;padding:0;border-radius:.1in;}
+.slot:has(img){border:none;background:none;padding:0;border-radius:.12in;}
 .slot.hero:has(img){border-radius:0;}
 
-/* framed photo look for placed pics on cream pages */
-.frame{background:#fff;padding:.07in;border-radius:.12in;
-  box-shadow:0 .03in 0 rgba(20,53,92,.18);}
+/* framed photo look for placed pics on cream pages — flat, no shadow */
+.frame{background:#FFFDF8;padding:.07in;border-radius:.14in;}
 
 /* ---- captions ---- */
-.cap{font-size:9.5pt;line-height:1.45;color:#3A4A5C;}
-.cap b{font-family:'Space Mono',monospace;font-size:8pt;color:var(--sail);
-  letter-spacing:.04em;font-weight:700;}
+.cap{font-size:9.5pt;line-height:1.45;color:#51605E;}
+.cap b{font-family:'Baloo 2';font-size:9pt;color:var(--sail);
+  letter-spacing:.08em;font-weight:700;}
 .navy .cap{color:var(--sky);}
 
 /* ---- layout helpers ---- */
@@ -118,7 +128,7 @@ h2{font-family:'Fredoka';font-weight:600;color:var(--navy);
 .bleedwrap .slot{position:absolute;inset:0;border-radius:0;}
 .overcap{
   position:absolute;left:var(--safe);right:var(--safe);bottom:var(--safe);
-  background:rgba(250,246,236,.94);border-radius:.12in;
+  background:rgba(249,241,224,.95);border-radius:.14in;
   padding:.14in .2in;z-index:5;
 }
 
@@ -127,27 +137,38 @@ h2{font-family:'Fredoka';font-weight:600;color:var(--navy);
 .crew{text-align:center;}
 .crew .slot{aspect-ratio:1;border-radius:50%;margin:0 auto .06in;width:64%;}
 .crew .slot:has(img){border-radius:50%;}
-.crew .nm{font-family:'Fredoka';font-weight:600;font-size:11pt;color:var(--navy);}
-.crew .who{font-size:8pt;color:#5A6B7E;font-weight:700;}
+.crew .nm{font-family:'Baloo 2';font-weight:700;font-size:11pt;color:var(--navy);}
+.crew .who{font-size:8pt;color:#5E6E6B;font-weight:700;}
 
-/* ---- spotter checklist ---- */
+/* ---- spotter checklist — flat tinted cards ---- */
 .spotgrid{display:grid;grid-template-columns:1fr 1fr;gap:.14in;}
-.spot{display:flex;align-items:center;gap:.12in;background:#fff;
-  border:2.5px solid var(--sky);border-radius:.12in;padding:.1in .12in;}
+.spot{display:flex;align-items:center;gap:.12in;background:#FFFDF8;
+  border-radius:.14in;padding:.12in .14in;}
+.spotgrid .spot:nth-child(3n+1){background:#F2E8D2;}
+.spotgrid .spot:nth-child(3n+2){background:#E7F0E9;}
+.spotgrid .spot:nth-child(3n){background:#F7E4D8;}
 .spot .ico{width:.5in;height:.5in;flex:none;}
-.spot .nm{font-family:'Fredoka';font-weight:600;font-size:11.5pt;color:var(--navy);}
-.spot .note{font-size:8pt;color:#5A6B7E;font-weight:700;}
-.tick{margin-left:auto;width:.3in;height:.3in;flex:none;border-radius:.07in;
-  border:2.5px solid var(--green);display:flex;align-items:center;justify-content:center;
-  color:var(--green);font-weight:800;font-size:11pt;}
+.spot .nm{font-family:'Baloo 2';font-weight:700;font-size:11.5pt;color:var(--navy);}
+.spot .note{font-size:8pt;color:#5E6E6B;font-weight:700;}
+.tick{margin-left:auto;width:.3in;height:.3in;flex:none;border-radius:50%;
+  background:var(--green);display:flex;align-items:center;justify-content:center;
+  color:var(--cream);font-weight:800;font-size:11pt;}
 
-/* ---- quote panels ---- */
-.quotecard{background:#fff;border:3px solid var(--navy);border-radius:.16in;
-  box-shadow:0 .045in 0 var(--navy);padding:.18in;display:flex;gap:.16in;}
+/* ---- quote panels — flat cards ---- */
+.quotecard{background:#FFFDF8;border-radius:.18in;padding:.18in;display:flex;gap:.16in;}
 .quotecard .slot{width:1.15in;aspect-ratio:1;border-radius:50%;flex:none;}
 .quotecard .slot:has(img){border-radius:50%;}
-.q{font-family:'Fredoka';font-weight:500;font-size:12.5pt;color:var(--navy);line-height:1.3;}
-.qwho{margin-top:.06in;font:700 8pt 'Space Mono',monospace;color:var(--sail);}
+.q{font-family:'Baloo 2';font-weight:600;font-size:12.5pt;color:var(--navy);line-height:1.28;}
+.qwho{margin-top:.06in;font-family:'Baloo 2';font-weight:700;font-size:8.5pt;
+  letter-spacing:.14em;color:var(--sail);}
+
+/* accent card on day 2 (mass note) — flat tint, no border bar */
+.notecard{background:#F2E8D2;border-radius:.12in;padding:.12in .16in;}
+
+/* rolling-hills footer garnish for opener pages */
+.hills{position:absolute;left:0;right:0;bottom:0;height:1.15in;z-index:0;}
+.hills svg{position:absolute;inset:0;width:100%;height:100%;}
+.hills ~ .safe, .safe.overhills{z-index:2;}
 
 /* corner motifs */
 .corner{position:absolute;z-index:4;}
