@@ -38,7 +38,7 @@ spread is the **shot list** to pull from Google Photos when curating.
 | 6–7 | **Day 1 · Getting there** — Dulles, the night flight (EI 118), landing at 8:55, the drive west, arriving at the farm; Martin's **40th** that evening | 4–6: airport/plane, sleepy arrivals, first farm moment, the 40th cake |
 | 8–9 | **The farm** — Cahertinna House life: Nana's kitchen, the yard, wellies, animals, everyday magic | 5–7 candids |
 | 10–11 | **Day 2 · Galway Races** — Grandad's anniversary mass in the morning (small, gentle note), then dress-up and the family day at Ballybrit — **Evelyn backed a winner and collected €30** | 4–6: dressed up, parade ring, the winning ticket + €30 |
-| 12–13 | **Day 3 · Birr Castle** — bank-holiday outing: gardens, science centre, the Great Telescope, and a visit with **Auntie Miriam** | 4–6: telescope hero shot, gardens, with Miriam |
+| 12–13 | **Day 3 · Birr Castle** — bank-holiday outing: gardens, science centre, the Great Telescope, and a visit with **Auntie Mary Pilkington** | 4–6: telescope hero shot, gardens, with Auntie Mary |
 | 14–15 | **Day 4 · Wildlands** — ziplines, mini land rovers, diggers, fairy walk | 4–6 action shots |
 | 16–17 | **Day 5 · Mam's home + the Burren** — Shannon arrivals hug, Aillwee Caves, birds of prey; full-bleed hero of Michael with the hawk on his glove (kite in the display too — confirm species from photos) | 4–6: airport hug, cave, THE hawk shot |
 | 18–19 | **Day 5 · Flaggy Shore** — limestone, rockpools, meeting Martin & Alice on the shore | 4–6: beach wide, rockpools, with Martin & Alice |
