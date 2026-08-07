@@ -1,0 +1,4 @@
+# This repo is PUBLIC — never commit family photos or rendered books.
+photos/
+out/
+src/.build-*

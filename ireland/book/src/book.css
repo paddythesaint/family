@@ -1,0 +1,153 @@
+/* Ryans Go to Ireland · 2026 — book interior styles
+   Geometry: Blurb Standard Square. Trim 8.5×8.5in, bleed 0.125in
+   → every .page renders at 8.75×8.75in. Safe zone: keep content
+   0.625in from the page edge (0.5in inside trim). */
+
+@font-face{font-family:'Fredoka';font-weight:400;src:url(fonts/fredoka-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Fredoka';font-weight:500;src:url(fonts/fredoka-latin-500-normal.woff2) format('woff2');}
+@font-face{font-family:'Fredoka';font-weight:600;src:url(fonts/fredoka-latin-600-normal.woff2) format('woff2');}
+@font-face{font-family:'Fredoka';font-weight:700;src:url(fonts/fredoka-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Nunito';font-weight:400;src:url(fonts/nunito-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Nunito';font-weight:700;src:url(fonts/nunito-latin-700-normal.woff2) format('woff2');}
+@font-face{font-family:'Nunito';font-weight:800;src:url(fonts/nunito-latin-800-normal.woff2) format('woff2');}
+@font-face{font-family:'Space Mono';font-weight:400;src:url(fonts/space-mono-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'Space Mono';font-weight:700;src:url(fonts/space-mono-latin-700-normal.woff2) format('woff2');}
+
+:root{
+  --navy:#14355C; --green:#2E7D4F; --cream:#FAF6EC; --gold:#E8A83C;
+  --sail:#BE4A2F; --sky:#BFD9E4; --ink:#1D2B3A;
+  --green-dk:#1F5737; --sky-soft:#E4F0F5; --gold-soft:#F7E3BC;
+  --bleed:0.125in; --safe:0.625in; /* from page edge */
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+@page{size:8.75in 8.75in;margin:0;}
+html,body{background:#fff;}
+body{font-family:'Nunito',sans-serif;color:var(--ink);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+.page{
+  position:relative;width:8.75in;height:8.75in;overflow:hidden;
+  background:var(--cream);break-after:page;page-break-after:always;
+}
+.page.white{background:#fff;}
+.page.navy{background:var(--navy);color:var(--cream);}
+
+/* content region respecting the safe zone */
+.safe{position:absolute;inset:var(--safe);}
+
+/* ---- proof guides (storyboard only; hidden for final) ---- */
+body.guides .page::before,body.guides .page::after{
+  content:'';position:absolute;pointer-events:none;z-index:60;
+}
+body.guides .page::before{ /* trim line */
+  inset:var(--bleed);border:0.5pt dashed rgba(190,74,47,.8);
+}
+body.guides .page::after{ /* safe zone */
+  inset:var(--safe);border:0.5pt dotted rgba(20,53,92,.45);
+}
+body.guides .pageno-tag{
+  position:absolute;top:.16in;left:50%;transform:translateX(-50%);
+  font:700 7pt 'Space Mono',monospace;color:#fff;background:var(--navy);
+  padding:.02in .08in;border-radius:.06in;z-index:61;opacity:.85;
+}
+body:not(.guides) .pageno-tag{display:none;}
+
+/* ---- typography ---- */
+.eyebrow{font-family:'Space Mono',monospace;letter-spacing:.26em;
+  text-transform:uppercase;font-size:8.5pt;color:var(--sail);}
+.navy .eyebrow{color:var(--gold);}
+h1{font-family:'Fredoka';font-weight:700;color:var(--navy);
+  text-transform:uppercase;line-height:1.04;}
+h2{font-family:'Fredoka';font-weight:600;color:var(--navy);
+  font-size:22pt;line-height:1.1;}
+.navy h1,.navy h2{color:var(--cream);}
+.lede{font-size:11.5pt;line-height:1.55;}
+.body{font-size:10.5pt;line-height:1.55;}
+.datechip{display:inline-block;font:700 8pt 'Space Mono',monospace;
+  background:var(--navy);color:var(--cream);border-radius:.09in;
+  padding:.035in .1in;letter-spacing:.06em;}
+
+/* ---- day opener band ---- */
+.dayband{display:flex;align-items:center;gap:.18in;margin-bottom:.14in;}
+.daybadge{
+  width:.72in;height:.72in;border-radius:50%;background:var(--green);
+  color:#fff;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;font-family:'Fredoka';line-height:1;
+  border:3px solid var(--green-dk);flex:none;
+}
+.daybadge .n{font-weight:700;font-size:20pt;}
+.daybadge .lbl{font-weight:600;font-size:6.5pt;text-transform:uppercase;letter-spacing:.08em;}
+.daytitle h2{font-size:24pt;}
+.daytitle .datechip{margin-top:.05in;}
+
+/* ---- photo slots (storyboard placeholders) ---- */
+.slot{
+  position:relative;background:var(--sky-soft);
+  border:2.5px dashed #8FB4C4;border-radius:.1in;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:.15in;overflow:hidden;
+}
+.slot .tag{font:700 8pt 'Space Mono',monospace;color:var(--navy);opacity:.75;
+  display:block;margin-bottom:.05in;}
+.slot .want{font:700 9.5pt 'Nunito';color:#47566A;line-height:1.35;}
+.slot.hero{border-radius:0;border-width:3px;}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.slot:has(img){border:none;background:none;padding:0;border-radius:.1in;}
+.slot.hero:has(img){border-radius:0;}
+
+/* framed photo look for placed pics on cream pages */
+.frame{background:#fff;padding:.07in;border-radius:.12in;
+  box-shadow:0 .03in 0 rgba(20,53,92,.18);}
+
+/* ---- captions ---- */
+.cap{font-size:9.5pt;line-height:1.45;color:#3A4A5C;}
+.cap b{font-family:'Space Mono',monospace;font-size:8pt;color:var(--sail);
+  letter-spacing:.04em;font-weight:700;}
+.navy .cap{color:var(--sky);}
+
+/* ---- layout helpers ---- */
+.col{display:flex;flex-direction:column;gap:.16in;height:100%;}
+.row{display:flex;gap:.16in;}
+.grow{flex:1;min-height:0;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.16in;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:.14in;}
+
+/* full-bleed image page */
+.bleedwrap{position:absolute;inset:0;}
+.bleedwrap .slot{position:absolute;inset:0;border-radius:0;}
+.overcap{
+  position:absolute;left:var(--safe);right:var(--safe);bottom:var(--safe);
+  background:rgba(250,246,236,.94);border-radius:.12in;
+  padding:.14in .2in;z-index:5;
+}
+
+/* ---- crew chips ---- */
+.crewgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.12in .14in;align-content:start;}
+.crew{text-align:center;}
+.crew .slot{aspect-ratio:1;border-radius:50%;margin:0 auto .06in;width:64%;}
+.crew .slot:has(img){border-radius:50%;}
+.crew .nm{font-family:'Fredoka';font-weight:600;font-size:11pt;color:var(--navy);}
+.crew .who{font-size:8pt;color:#5A6B7E;font-weight:700;}
+
+/* ---- spotter checklist ---- */
+.spotgrid{display:grid;grid-template-columns:1fr 1fr;gap:.14in;}
+.spot{display:flex;align-items:center;gap:.12in;background:#fff;
+  border:2.5px solid var(--sky);border-radius:.12in;padding:.1in .12in;}
+.spot .ico{width:.5in;height:.5in;flex:none;}
+.spot .nm{font-family:'Fredoka';font-weight:600;font-size:11.5pt;color:var(--navy);}
+.spot .note{font-size:8pt;color:#5A6B7E;font-weight:700;}
+.tick{margin-left:auto;width:.3in;height:.3in;flex:none;border-radius:.07in;
+  border:2.5px solid var(--green);display:flex;align-items:center;justify-content:center;
+  color:var(--green);font-weight:800;font-size:11pt;}
+
+/* ---- quote panels ---- */
+.quotecard{background:#fff;border:3px solid var(--navy);border-radius:.16in;
+  box-shadow:0 .045in 0 var(--navy);padding:.18in;display:flex;gap:.16in;}
+.quotecard .slot{width:1.15in;aspect-ratio:1;border-radius:50%;flex:none;}
+.quotecard .slot:has(img){border-radius:50%;}
+.q{font-family:'Fredoka';font-weight:500;font-size:12.5pt;color:var(--navy);line-height:1.3;}
+.qwho{margin-top:.06in;font:700 8pt 'Space Mono',monospace;color:var(--sail);}
+
+/* corner motifs */
+.corner{position:absolute;z-index:4;}

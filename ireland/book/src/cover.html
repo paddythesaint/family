@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ryans Go to Ireland · 2026 — cover</title>
+<link rel="stylesheet" href="book.css">
+<style>
+/* Wraparound hardcover (ImageWrap): back | spine | front.
+   Geometry is injected by build.mjs as CSS variables:
+   --coverW / --coverH (full document) and --spine (spine width).
+   Each panel is trim 8.5in + wrap allowance on outer edges. */
+:root{ --coverW:18.25in; --coverH:9.25in; --spine:0.375in; --wrap:0.375in; }
+@page{size:var(--coverW) var(--coverH);margin:0;}
+.cover{position:relative;width:var(--coverW);height:var(--coverH);
+  background:var(--navy);overflow:hidden;color:var(--cream);}
+.panel{position:absolute;top:0;height:100%;}
+.back{left:0;width:calc((var(--coverW) - var(--spine)) / 2);}
+.front{right:0;width:calc((var(--coverW) - var(--spine)) / 2);}
+.spine{left:calc((var(--coverW) - var(--spine)) / 2);width:var(--spine);
+  background:var(--sail);display:flex;align-items:center;justify-content:center;}
+.spine .txt{writing-mode:vertical-rl;font-family:'Fredoka';font-weight:600;
+  color:var(--cream);font-size:13pt;letter-spacing:.12em;white-space:nowrap;}
+/* keep essentials inside wrap + safe */
+.panel .safe{position:absolute;inset:calc(var(--wrap) + .5in);}
+body.guides .panel{outline:.5pt dashed rgba(232,168,60,.9);outline-offset:calc(-1 * var(--wrap));}
+</style>
+</head>
+<body class="guides">
+<div class="cover">
+
+  <!-- BACK PANEL -->
+  <div class="panel back">
+    <div class="safe" style="display:flex;flex-direction:column;justify-content:space-between;">
+      <div style="display:flex;gap:.14in;justify-content:center;margin-top:.2in;">
+        <div class="slot" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC1</span><span class="want">mini photo</span></div></div>
+        <div class="slot" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC2</span><span class="want">mini photo</span></div></div>
+        <div class="slot" style="width:1.5in;aspect-ratio:1;"><div><span class="tag">BC3</span><span class="want">mini photo</span></div></div>
+      </div>
+      <div style="text-align:center;">
+        <div class="body" style="color:var(--sky);max-width:5in;margin:0 auto;line-height:1.6;">
+          Seven days in the West of Ireland: one farm, ten cousins,
+          four houses, two airports, one enormous telescope,
+          several million sheep — and the annual photo to prove it.
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:.15in;">
+        <svg width=".45in" height=".45in" viewBox="0 0 100 100"><use href="#shamrock"/></svg>
+        <div class="eyebrow" style="color:var(--gold);">A Ryan Family Production · 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPINE -->
+  <div class="panel spine"><div class="txt">RYANS GO TO IRELAND · 2026</div></div>
+
+  <!-- FRONT PANEL -->
+  <div class="panel front">
+    <div class="safe" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:.2in;">
+      <div class="eyebrow" style="color:var(--gold);margin-top:.1in;">The Ryan Family</div>
+      <h1 style="font-size:38pt;color:var(--cream);">Ryans Go<br>to Ireland</h1>
+      <div class="datechip" style="background:var(--gold);color:var(--navy);">1 – 8 AUGUST 2026</div>
+      <div class="slot grow" style="width:100%;"><div><span class="tag">COVER HERO</span><span class="want">Front-cover photo — the annual cousins photo, or the best beach/farm shot</span></div></div>
+      <svg width="1in" height=".55in" viewBox="0 0 100 100"><use href="#hooker"/></svg>
+    </div>
+  </div>
+
+</div>
+
+<!-- icon defs reused from interior -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="hooker">
+      <path d="M12 72 Q50 84 88 72 L80 88 Q50 96 20 88 Z" fill="#FAF6EC"/>
+      <rect x="49" y="14" width="3" height="60" fill="#E8A83C"/>
+      <path d="M49 18 Q20 46 46 70 L49 70 Z" fill="#BE4A2F"/>
+      <path d="M52 14 Q88 40 55 70 L52 70 Z" fill="#A63E26"/>
+    </g>
+    <g id="shamrock">
+      <circle cx="38" cy="34" r="17" fill="#2E7D4F"/>
+      <circle cx="62" cy="34" r="17" fill="#2E7D4F"/>
+      <circle cx="50" cy="55" r="17" fill="#2E7D4F"/>
+      <circle cx="50" cy="41" r="12" fill="#2E7D4F"/>
+      <path d="M50 60 Q46 78 38 88" stroke="#1F5737" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+  </defs>
+</svg>
+</body>
+</html>
