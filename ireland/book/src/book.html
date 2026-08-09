@@ -160,88 +160,95 @@
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <g id="mapart">
-      <rect x="0" y="0" width="1750" height="875" fill="#CDE4DF"/>
-      <!-- land -->
-      <path d="M240 0 Q200 120 260 220 Q180 300 250 420 Q170 520 260 610 Q210 720 300 875 L1750 875 L1750 0 Z"
-        fill="#E3EBD3"/>
-      <!-- waves -->
+      <rect x="0" y="0" width="1750" height="875" fill="#E3EBD3"/>
+      <path d="M0 240 Q120 255 219 306
+               Q 300 315 274 413
+               Q 231 422 178 400
+               Q 130 402 112 430 Q 95 520 100 875 L 0 875 Z" fill="#CDE4DF"/>
       <g stroke="#8FB8B0" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7">
-        <path d="M60 180 q20 -14 40 0 q20 14 40 0"/>
-        <path d="M40 420 q20 -14 40 0 q20 14 40 0"/>
-        <path d="M80 660 q20 -14 40 0 q20 14 40 0"/>
+        <path d="M25 480 q18 -12 36 0 q18 12 36 0"/>
+        <path d="M40 660 q18 -12 36 0 q18 12 36 0"/>
       </g>
-      <use href="#hooker" transform="translate(60,260) scale(1.1)"/>
-      <use href="#hooker" transform="translate(110,540) scale(.8)"/>
-      <!-- title -->
-      <text x="330" y="105" font-family='Baloo 2' font-weight="800" font-size="56"><tspan fill="#E5654A">ONE</tspan> <tspan fill="#265B6B">WEEK</tspan></text>
-      <text x="330" y="162" font-family='Baloo 2' font-weight="800" font-size="56"><tspan fill="#6FA477">IN THE</tspan> <tspan fill="#EDAF3F">WEST</tspan></text>
-      <text x="332" y="200" font-family='Baloo 2' font-size="20" letter-spacing="4" fill="#E5654A">CO. GALWAY &amp; BEYOND · AUG 2026</text>
-      <!-- Lough Rea -->
-      <ellipse cx="1080" cy="520" rx="52" ry="30" fill="#CDE4DF" stroke="#8FB8B0" stroke-width="4"/>
-      <!-- routes from the farm -->
-      <g stroke="#E5654A" stroke-width="5" stroke-dasharray="14 12" fill="none" stroke-linecap="round" opacity=".85">
-        <path d="M1080 430 Q1300 300 1580 210"/>          <!-- Dublin -->
-        <path d="M1040 460 Q800 420 600 400"/>            <!-- Galway/Ballybrit -->
-        <path d="M600 380 Q500 320 450 270"/>             <!-- on to Wildlands -->
-        <path d="M1090 480 Q1280 560 1400 640"/>          <!-- Birr -->
-        <path d="M1040 490 Q740 620 480 690"/>            <!-- Shannon -->
-        <path d="M1020 470 Q640 520 330 540"/>            <!-- Traught/Kinvara -->
+      <use href="#hooker" transform="translate(25,540) scale(.8)"/>
+      <use href="#hooker" transform="translate(55,720) scale(.6)"/>
+      <text x="430" y="102" font-family='Baloo 2' font-weight="800" font-size="58"><tspan fill="#E5654A">ONE</tspan> <tspan fill="#265B6B">WEEK</tspan></text>
+      <text x="430" y="160" font-family='Baloo 2' font-weight="800" font-size="58"><tspan fill="#6FA477">IN THE</tspan> <tspan fill="#EDAF3F">WEST</tspan></text>
+      <text x="432" y="196" font-family='Baloo 2' font-weight="700" font-size="22" letter-spacing="3" fill="#E5654A">EVERY PLACE IN ITS TRUE SPOT</text>
+      <ellipse cx="448" cy="404" rx="26" ry="14" fill="#CDE4DF"/>
+      <g stroke="#E5654A" stroke-width="5" stroke-dasharray="13 11" fill="none" stroke-linecap="round" opacity=".85">
+        <path d="M454 366 Q 980 250 1583 179"/>
+        <path d="M454 366 Q 340 330 245 284"/>
+        <path d="M219 306 Q 180 285 156 254"/>
+        <path d="M454 366 Q 620 430 771 447"/>
+        <path d="M454 366 Q 330 560 280 767"/>
+        <path d="M280 767 Q 205 610 174 454"/>
+        <path d="M174 454 L 188 400"/>
       </g>
-      <!-- FARM (kept clear of the gutter at x=875) -->
-      <g transform="translate(1010,370)">
-        <use href="#farmhouse" transform="scale(1.5)"/>
-        <text x="75" y="175" text-anchor="middle" font-family='Baloo 2' font-weight="600" font-size="30" fill="#265B6B">Nana's Farm</text>
-        <text x="75" y="205" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="20" fill="#5E6E6B">Cahertinna · Loughrea</text>
+      <g transform="translate(402,271)">
+        <use href="#farmhouse" transform="scale(1.15)"/>
+        <text x="58" y="-56" text-anchor="middle" font-family='Baloo 2' font-weight="700" font-size="32" fill="#265B6B">Nana's Farm</text>
+        <text x="58" y="-28" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="18" fill="#5E6E6B">Cahertinna · Loughrea</text>
+        <text x="58" y="-6" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="16" fill="#5E6E6B">+ all four cousins' houses</text>
       </g>
-      <!-- Dublin -->
-      <g transform="translate(1560,140)">
-        <use href="#plane" transform="scale(1.05)"/>
-        <text x="52" y="135" text-anchor="middle" font-family='Baloo 2' font-weight="600" font-size="26" fill="#265B6B">Dublin</text>
-        <text x="52" y="160" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="17" fill="#5E6E6B">landed 1 Aug</text>
+      <g transform="translate(1543,109)">
+        <use href="#plane" transform="scale(.9)"/>
+        <text x="45" y="120" text-anchor="middle" font-family='Baloo 2' font-weight="700" font-size="26" fill="#265B6B">Dublin</text>
+        <text x="45" y="145" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="16" fill="#5E6E6B">landed day 1 · home day 8</text>
       </g>
-      <!-- Ballybrit -->
-      <g transform="translate(545,320)">
-        <use href="#horseshoe" transform="scale(.95)"/>
-        <text x="48" y="125" text-anchor="middle" font-family='Baloo 2' font-weight="600" font-size="26" fill="#265B6B">Galway Races</text>
-        <text x="48" y="150" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="17" fill="#5E6E6B">Ballybrit · day 2</text>
+      <g transform="translate(245,284)">
+        <circle cx="0" cy="0" r="7" fill="#265B6B"/>
+        <use href="#horseshoe" transform="translate(-20,-88) scale(.65)"/>
+        <text x="48" y="-26" font-family='Baloo 2' font-weight="700" font-size="24" fill="#265B6B">Galway Races</text>
+        <text x="48" y="-6" font-family="Nunito" font-weight="800" font-size="15" fill="#5E6E6B">day 2 · Evelyn's €30</text>
       </g>
-      <!-- Wildlands -->
-      <g transform="translate(360,235)">
-        <use href="#sun" transform="scale(.9)"/>
-        <text x="45" y="120" text-anchor="middle" font-family='Baloo 2' font-weight="600" font-size="26" fill="#265B6B">Wildlands</text>
-        <text x="45" y="145" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="17" fill="#5E6E6B">Moycullen · day 4</text>
+      <g transform="translate(219,306)">
+        <circle cx="0" cy="0" r="7" fill="#265B6B"/>
+        <text x="16" y="34" font-family='Baloo 2' font-weight="700" font-size="22" fill="#265B6B">Galway</text>
+        <text x="16" y="54" font-family="Nunito" font-weight="800" font-size="14" fill="#5E6E6B">day 6 · books &amp; Lego</text>
       </g>
-      <!-- Birr -->
-      <g transform="translate(1360,590)">
-        <use href="#telescope" transform="scale(1)"/>
-        <text x="50" y="130" text-anchor="middle" font-family='Baloo 2' font-weight="600" font-size="26" fill="#265B6B">Birr Castle</text>
-        <text x="50" y="155" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="17" fill="#5E6E6B">Great Telescope · day 3</text>
+      <g transform="translate(156,254)">
+        <circle cx="0" cy="0" r="7" fill="#265B6B"/>
+        <use href="#sun" transform="translate(-120,-102) scale(.5)"/>
+        <text x="-60" y="-44" font-family='Baloo 2' font-weight="700" font-size="24" fill="#265B6B">Wildlands</text>
+        <text x="-60" y="-24" font-family="Nunito" font-weight="800" font-size="15" fill="#5E6E6B">day 4 · sky nets</text>
       </g>
-      <!-- Shannon -->
-      <g transform="translate(430,640)">
-        <use href="#plane" transform="scale(.7)"/>
-        <text x="36" y="100" text-anchor="middle" font-family='Baloo 2' font-weight="600" font-size="24" fill="#265B6B">Shannon</text>
-        <text x="36" y="124" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="16" fill="#5E6E6B">Mam lands · day 5</text>
+      <g transform="translate(771,447)">
+        <circle cx="0" cy="0" r="7" fill="#265B6B"/>
+        <use href="#telescope" transform="translate(-8,14) scale(.8)"/>
+        <text x="-24" y="10" text-anchor="end" font-family='Baloo 2' font-weight="700" font-size="24" fill="#265B6B">Birr Castle</text>
+        <text x="-24" y="32" text-anchor="end" font-family="Nunito" font-weight="800" font-size="15" fill="#5E6E6B">day 3 · + Auntie Mary's</text>
       </g>
-      <!-- Traught -->
-      <g transform="translate(280,470)">
-        <use href="#bucket" transform="scale(.85)"/>
-        <text x="42" y="112" text-anchor="middle" font-family='Baloo 2' font-weight="600" font-size="24" fill="#265B6B">Traught Beach</text>
-        <text x="42" y="136" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="16" fill="#5E6E6B">Kinvara · day 5</text>
+      <g transform="translate(280,767)">
+        <circle cx="0" cy="0" r="7" fill="#265B6B"/>
+        <use href="#plane" transform="translate(-70,-45) scale(.55)"/>
+        <text x="24" y="8" font-family='Baloo 2' font-weight="700" font-size="22" fill="#265B6B">Shannon</text>
+        <text x="24" y="28" font-family="Nunito" font-weight="800" font-size="14" fill="#5E6E6B">Mam lands · day 5</text>
       </g>
-      <!-- scattered extras -->
-      <use href="#sheep" transform="translate(760,200) scale(.7)"/>
-      <use href="#sheep" transform="translate(1250,470) scale(.55)"/>
-      <use href="#sheep" transform="translate(900,650) scale(.65)"/>
-      <use href="#tractor" transform="translate(1180,240) scale(.7)"/>
-      <use href="#rainbow" transform="translate(620,560) scale(.9)"/>
-      <use href="#swallow" transform="translate(1500,420) scale(.5)"/>
-      <use href="#swallow" transform="translate(820,90) scale(.4)"/>
-      <!-- compass -->
+      <g transform="translate(174,454)">
+        <circle cx="0" cy="0" r="7" fill="#265B6B"/>
+        <text x="16" y="28" font-family='Baloo 2' font-weight="700" font-size="22" fill="#265B6B">Aillwee</text>
+        <text x="16" y="48" font-family="Nunito" font-weight="800" font-size="14" fill="#5E6E6B">caves + the hawk · day 5</text>
+      </g>
+      <g transform="translate(188,400)">
+        <circle cx="0" cy="0" r="7" fill="#265B6B"/>
+        <use href="#bucket" transform="translate(-52,-58) scale(.5)"/>
+        <text x="-160" y="-40" font-family='Baloo 2' font-weight="700" font-size="22" fill="#265B6B">Flaggy Shore</text>
+        <text x="-160" y="-20" font-family="Nunito" font-weight="800" font-size="14" fill="#5E6E6B">shells with Alice · day 5</text>
+      </g>
+      <use href="#sheep" transform="translate(240,560) scale(.55)"/>
+      <use href="#sheep" transform="translate(640,290) scale(.5)"/>
+      <use href="#sheep" transform="translate(1000,560) scale(.6)"/>
+      <use href="#tractor" transform="translate(1150,330) scale(.6)"/>
+      <use href="#rainbow" transform="translate(780,620) scale(.8)"/>
+      <use href="#swallow" transform="translate(1350,250) scale(.45)"/>
+      <use href="#swallow" transform="translate(560,235) scale(.4)"/>
+      <use href="#cloud" transform="translate(1450,60) scale(.9)"/>
+      <use href="#raincloud" transform="translate(1230,430) scale(.75)"/>
+      <use href="#cloud" transform="translate(180,60) scale(.8)"/>
       <g transform="translate(1620,720)">
-        <circle r="46" fill="#F9F1E0" stroke="#265B6B" stroke-width="5"/>
+        <circle r="46" fill="#F9F1E0"/>
         <path d="M0 -34 L10 8 L0 0 L-10 8 Z" fill="#E5654A"/>
-        <text y="-52" text-anchor="middle" font-family='Baloo 2' font-weight="700" font-size="24" fill="#265B6B">N</text>
+        <text y="-52" text-anchor="middle" font-family='Baloo 2' font-weight="800" font-size="24" fill="#265B6B">N</text>
       </g>
     </g>
   </defs>
@@ -249,46 +256,45 @@
 
 <!-- ═══════════ p4–5 · THE CREW ═══════════ -->
 <div class="page">
-  <div class="pageno-tag">the crew (kids)</div>
+  <div class="pageno-tag">the cousins</div>
   <div class="safe">
     <div class="col">
       <div>
         <div class="eyebrow">Who came on the adventure</div>
-        <h2 style="font-size:26pt;">The Crew</h2>
+        <h2 style="font-size:26pt;">The Cousins</h2>
       </div>
-      <div class="crewgrid grow">
-        <div class="crew"><div class="slot"><span class="want">EVELYN<br>portrait</span></div><div class="nm">Evelyn</div><div class="who">based at Nana's</div></div>
-        <div class="crew"><div class="slot"><span class="want">MICHAEL<br>portrait</span></div><div class="nm">Michael</div><div class="who">based at Nana's</div></div>
-        <div class="crew"><div class="slot"><span class="want">CATHERINE<br>portrait</span></div><div class="nm">Catherine</div><div class="who">based at Nana's</div></div>
-        <div class="crew"><div class="slot"><span class="want">ALICE<br>portrait</span></div><div class="nm">Alice</div><div class="who">Ballymore</div></div>
-        <div class="crew"><div class="slot"><span class="want">RUTH<br>portrait</span></div><div class="nm">Baby Ruth</div><div class="who">Ballymore</div></div>
-        <div class="crew"><div class="slot"><span class="want">TIERNAN<br>portrait</span></div><div class="nm">Tiernan</div><div class="who">Bridgefield</div></div>
-        <div class="crew"><div class="slot"><span class="want">EOLANN<br>portrait</span></div><div class="nm">Eolann</div><div class="who">Bridgefield</div></div>
-        <div class="crew"><div class="slot"><span class="want">CAIMIN<br>portrait</span></div><div class="nm">Baby Caimin</div><div class="who">Bridgefield</div></div>
-        <div class="crew"><div class="slot"><span class="want">SENÁN + ALANNAH<br>portrait(s)</span></div><div class="nm">Senán &amp; Alannah</div><div class="who">Lurgan</div></div>
+      <div class="slot grow frame"><img src="../photos/n243.jpg" alt=""></div>
+      <div class="cap"><b>AT AUNTIE MARY’S</b> — Alannah, Michael, Alice, Senán, Eolann,
+        Evelyn and Catherine, with Auntie Mary holding court. (Tiernan and the
+        babies were off on other business.)</div>
+      <div class="row" style="height:2.1in;">
+        <div class="slot grow frame"><img src="../photos/n214.jpg" alt=""></div>
+        <div style="width:2.6in;display:flex;flex-direction:column;justify-content:center;gap:.1in;">
+          <div class="q" style="font-size:13pt;">Catherine &amp; Alice — best hats at the races.</div>
+          <div class="qwho">SUNDAY · BALLYBRIT</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div class="page">
-  <div class="pageno-tag">the crew (grown-ups + Nana)</div>
+  <div class="pageno-tag">the grown-ups</div>
   <div class="safe">
     <div class="col">
       <div class="row" style="align-items:flex-end;">
         <h2 style="font-size:26pt;">…and the Grown-ups</h2>
         <svg style="margin-left:auto" width=".55in" height=".55in" viewBox="0 0 100 100"><use href="#shamrock"/></svg>
       </div>
-      <div class="crewgrid">
-        <div class="crew"><div class="slot"><span class="want">DAD + MAM</span></div><div class="nm">Dad &amp; Mam</div><div class="who">Patrick &amp; Sally</div></div>
-        <div class="crew"><div class="slot"><span class="want">MARTIN + LEONA</span></div><div class="nm">Martin &amp; Leona</div><div class="who">Ballymore</div></div>
-        <div class="crew"><div class="slot"><span class="want">FRANCIS + KATE</span></div><div class="nm">Francis &amp; Kate</div><div class="who">Bridgefield</div></div>
-        <div class="crew"><div class="slot"><span class="want">MICHAEL + AISLING</span></div><div class="nm">Michael &amp; Aisling</div><div class="who">Lurgan</div></div>
-      </div>
-      <div class="quotecard grow" style="align-items:center;">
-        <div class="slot" style="width:1.7in;"><span class="want">NANA BRIGID<br>portrait — the good one</span></div>
-        <div>
-          <div class="q">And at the centre of it all — Nana Brigid, and the farm that brings everyone home.</div>
-          <div class="qwho">CAHERTINNA HOUSE, LOUGHREA</div>
+      <div class="slot grow frame"><img src="../photos/n169.jpg" alt=""></div>
+      <div class="cap"><b>THE BROTHERS</b> — Francis (with baby Caimin), Martin (with baby
+        Ruth), Michael, and Patrick. Four houses, one week, no minutes recorded.</div>
+      <div class="quotecard" style="align-items:center;">
+        <div style="display:flex;align-items:center;gap:.16in;">
+          <svg width=".6in" height=".6in" viewBox="0 0 100 100" style="flex:none"><use href="#farmhouse"/></svg>
+          <div>
+            <div class="q">And at the centre of it all — Nana Brigid, and the farm that brings everyone home.</div>
+            <div class="qwho">CAHERTINNA HOUSE · LOUGHREA</div>
+          </div>
         </div>
       </div>
     </div>
@@ -313,11 +319,11 @@
         Airport, and by lunch the wheels were crunching up the lane at
         Cahertinna — with cousins already waiting at the gate.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 1A</span><span class="want">Airport / on the plane — sleepy kids, landscape</span></div></div>
+        <div class="slot grow"><img src="../photos/n268.jpg" alt=""></div>
       </div>
       <div class="row" style="height:2in;">
-        <div class="slot grow"><div><span class="tag">SLOT 1B</span><span class="want">The drive west / first view of the farm</span></div></div>
-        <div class="slot grow"><div><span class="tag">SLOT 1C</span><span class="want">Hellos at the gate</span></div></div>
+        <div class="slot grow"><img src="../photos/n267.jpg" alt=""></div>
+        <div class="slot grow"><img src="../photos/n182.jpg" alt=""></div>
       </div>
       <div class="cap"><b>SAT 1 AUG</b> — Landed 8:55am. Two hours west, one shop-run, and straight into the yard.</div>
     </div>
@@ -328,17 +334,18 @@
   <div class="safe">
     <div class="col">
       <div class="row grow">
-        <div class="slot grow hero"><div><span class="tag">SLOT 1D</span><span class="want">Evening: Martin's 40th — cake, candles and balloons, everyone round the table</span></div></div>
+        <div class="slot grow hero"><img src="../photos/n220.jpg" alt=""></div>
       </div>
       <div class="row" style="align-items:center;gap:.14in;">
         <svg width=".65in" height=".65in" viewBox="0 0 100 100"><use href="#cake"/></svg>
         <div class="cap grow"><b>THAT EVENING</b> — No easing in: it was Uncle Martin's birthday the very day we
           landed — and not just any birthday: his fortieth. Cake, candles
-          and the first pints of the week.</div>
+          and the first pints of the week, in Martin and Leona's garden
+          at Ballymore.</div>
       </div>
       <div class="row" style="height:1.9in;">
-        <div class="slot grow"><div><span class="tag">SLOT 1E</span><span class="want">Candid from the birthday evening</span></div></div>
-        <div class="slot grow"><div><span class="tag">SLOT 1F</span><span class="want">Cousins reunited — first mischief</span></div></div>
+        <div class="slot grow"><img src="../photos/n195.jpg" alt=""></div>
+        <div class="slot grow"><img src="../photos/n265.jpg" alt=""></div>
       </div>
     </div>
   </div>
@@ -360,10 +367,10 @@
         wellies by the door, bread in the oven and a yard full of places
         to hide. The kids were up at nine and out the door by five past.</div>
       <div class="grid2 grow">
-        <div class="slot"><div><span class="tag">SLOT F1</span><span class="want">Nana's kitchen</span></div></div>
-        <div class="slot"><div><span class="tag">SLOT F2</span><span class="want">The yard / animals</span></div></div>
-        <div class="slot"><div><span class="tag">SLOT F3</span><span class="want">Wellies / boots lineup</span></div></div>
-        <div class="slot"><div><span class="tag">SLOT F4</span><span class="want">Kids helping (or "helping")</span></div></div>
+        <div class="slot"><img src="../photos/n252.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n191.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n224.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n294.jpg" alt=""></div>
       </div>
     </div>
   </div>
@@ -371,7 +378,7 @@
 <div class="page">
   <div class="pageno-tag">the farm (hero)</div>
   <div class="bleedwrap">
-    <div class="slot hero"><div><span class="tag">SLOT F5 · FULL BLEED</span><span class="want">Best single farm photo — golden evening light, kids in the field, or the house itself</span></div></div>
+    <div class="slot hero"><img src="../photos/n227.jpg" alt=""></div>
   </div>
   <div class="overcap"><div class="cap"><b>CAHERTINNA</b> — The farm holds the whole story together: every adventure started and ended up this lane.</div></div>
 </div>
@@ -397,7 +404,7 @@
         first race at two o'clock. There were pony rides and face paint,
         and serious study of the racecard by people who cannot yet read.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 2A</span><span class="want">Everyone dressed up — before leaving or at the track</span></div></div>
+        <div class="slot grow"><img src="../photos/n085.jpg" alt=""></div>
       </div>
       <div class="cap"><b>SUN 2 AUG</b> — Left at quarter to one; home for a very late dinner.</div>
     </div>
@@ -408,11 +415,11 @@
   <div class="safe">
     <div class="col">
       <div class="row grow">
-        <div class="slot grow hero"><div><span class="tag">SLOT 2B</span><span class="want">Racecourse hero — grandstand, parade ring or a race mid-flight</span></div></div>
+        <div class="slot grow hero"><img src="../photos/n201.jpg" alt=""></div>
       </div>
       <div class="grid2" style="height:2.1in;">
-        <div class="slot"><div><span class="tag">SLOT 2C</span><span class="want">Kids' activities / face paint</span></div></div>
-        <div class="slot"><div><span class="tag">SLOT 2D</span><span class="want">Evelyn’s winning ticket &amp; the €30</span></div></div>
+        <div class="slot"><img src="../photos/n225.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n001.jpg" alt=""></div>
       </div>
       <div class="cap"><b>THE BIG WIN</b> — Evelyn studied the card, backed her horse, and collected
         thirty euro at the window. She has not stopped mentioning it.</div>
@@ -438,7 +445,7 @@
         telescope on Earth, and still enormous. Then a call in to
         Auntie Mary — Birr's own — to finish the day properly.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 3A</span><span class="want">The Great Telescope — kids for scale</span></div></div>
+        <div class="slot grow"><img src="../photos/n008.jpg" alt=""></div>
         <div style="display:flex;flex-direction:column;gap:.14in;width:1.1in;">
           <svg width="1in" height="1in" viewBox="0 0 100 100"><use href="#telescope"/></svg>
           <div class="cap">The Leviathan: built 1845, mirror six feet across.</div>
@@ -452,9 +459,9 @@
   <div class="pageno-tag">day 3 photos</div>
   <div class="safe">
     <div class="grid2" style="height:100%;grid-template-rows:1fr 1fr;">
-      <div class="slot" style="grid-column:1/3;"><div><span class="tag">SLOT 3B</span><span class="want">Gardens / group walking shot — wide</span></div></div>
-      <div class="slot"><div><span class="tag">SLOT 3C</span><span class="want">Science centre</span></div></div>
-      <div class="slot"><div><span class="tag">SLOT 3D</span><span class="want">With Auntie Mary</span></div></div>
+      <div class="slot" style="grid-column:1/3;"><img src="../photos/n242.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n136.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n110.jpg" alt=""></div>
     </div>
   </div>
 </div>
@@ -473,11 +480,11 @@
         <svg style="margin-left:auto" width=".8in" height=".8in" viewBox="0 0 100 100"><use href="#sun"/></svg>
       </div>
       <div class="lede">Back by popular demand — the kids loved it last
-        year. Ziplines through the trees, mini land rovers, real diggers,
-        and a fairy walk for the small ones. Lunch at the café, everyone
-        home muddy and delighted.</div>
+        year. Treetop nets strung through the sky, climbing walls, slides,
+        and serious digging. Lunch at the café, everyone home muddy
+        and delighted.</div>
       <div class="row grow">
-        <div class="slot grow hero"><div><span class="tag">SLOT 4A</span><span class="want">Zipline action shot — mid-air if you have one</span></div></div>
+        <div class="slot grow hero"><img src="../photos/n256.jpg" alt=""></div>
       </div>
       <div class="cap"><b>TUE 4 AUG</b> — An hour west past Galway; home mid-afternoon, gloriously worn out.</div>
     </div>
@@ -487,10 +494,10 @@
   <div class="pageno-tag">day 4 photos</div>
   <div class="safe">
     <div class="grid2" style="height:100%;grid-template-rows:1fr 1fr;">
-      <div class="slot"><div><span class="tag">SLOT 4B</span><span class="want">Mini land rovers</span></div></div>
-      <div class="slot"><div><span class="tag">SLOT 4C</span><span class="want">Diggers</span></div></div>
-      <div class="slot"><div><span class="tag">SLOT 4D</span><span class="want">Fairy walk</span></div></div>
-      <div class="slot"><div><span class="tag">SLOT 4E</span><span class="want">Muddy triumphant group</span></div></div>
+      <div class="slot"><img src="../photos/n164.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n194.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n261.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n217.jpg" alt=""></div>
     </div>
   </div>
 </div>
@@ -513,8 +520,8 @@
         hills of the Burren: deep under the mountain at Aillwee Caves, and
         out blinking into the daylight for the birds of prey.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 5A</span><span class="want">Airport reunion hug</span></div></div>
-        <div class="slot grow"><div><span class="tag">SLOT 5B</span><span class="want">Aillwee — cave mouth or underground</span></div></div>
+        <div class="slot grow"><img src="../photos/n131.jpg" alt=""></div>
+        <div class="slot grow"><img src="../photos/n143.jpg" alt=""></div>
       </div>
       <div class="cap"><b>WED 5 AUG</b> — EI 381 into Shannon at 11:20; underground by early afternoon.</div>
     </div>
@@ -523,11 +530,11 @@
 <div class="page">
   <div class="pageno-tag">day 5 · the hawk</div>
   <div class="bleedwrap">
-    <div class="slot hero"><div><span class="tag">SLOT 5C · FULL BLEED</span><span class="want">THE shot — Michael with the hawk on his glove</span></div></div>
+    <div class="slot hero"><img src="../photos/n249.jpg" alt=""></div>
   </div>
-  <div class="overcap"><div class="cap"><b>AILLWEE BIRDS OF PREY</b> — A hawk on Michael's glove, cool as you like.
-    A kite flew in the display too — one for the family bird list.
-    (Species to confirm from the photos.)</div></div>
+  <div class="overcap"><div class="cap"><b>AILLWEE BIRDS OF PREY</b> — A Harris's hawk swept the crowd and landed straight
+    onto Michael's glove, cool as you like. A kite circled overhead too —
+    one for the family bird list.</div></div>
 </div>
 
 <!-- ═══════════ DAY 5 · FLAGGY SHORE ═══════════ -->
@@ -547,9 +554,9 @@
         toes — and more cousins: Martin and Alice came out to meet us on
         the shore.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 5D</span><span class="want">Flaggy Shore wide — kids against sea and stone</span></div></div>
+        <div class="slot grow"><img src="../photos/n045.jpg" alt=""></div>
       </div>
-      <div class="cap"><b>NEW QUAY, CO. CLARE</b> — Shells collected: hundreds. Shells that made it home: six.</div>
+      <div class="cap"><b>NEW QUAY, CO. CLARE</b> — Shells picked with Alice: hundreds. Shells that made it home: six.</div>
     </div>
   </div>
 </div>
@@ -557,9 +564,9 @@
   <div class="pageno-tag">day 5 · beach photos</div>
   <div class="safe">
     <div class="grid2" style="height:100%;grid-template-rows:1fr 1fr;">
-      <div class="slot"><div><span class="tag">SLOT 5E</span><span class="want">Rockpooling close-up</span></div></div>
-      <div class="slot"><div><span class="tag">SLOT 5F</span><span class="want">With Martin &amp; Alice</span></div></div>
-      <div class="slot" style="grid-column:1/3;"><div><span class="tag">SLOT 5G</span><span class="want">Beach candid — wide</span></div></div>
+      <div class="slot"><img src="../photos/n281.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n048.jpg" alt=""></div>
+      <div class="slot" style="grid-column:1/3;"><img src="../photos/n274.jpg" alt=""></div>
     </div>
   </div>
 </div>
@@ -583,8 +590,8 @@
         Uncle Michael and Auntie Aisling's in Lurgan, where the barbecue
         was lit and the whole crowd gathered.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 6A</span><span class="want">Galway town — Quay Street / Shop Street bustle</span></div></div>
-        <div class="slot grow"><div><span class="tag">SLOT 6B</span><span class="want">The haul — books, Lego, new gear</span></div></div>
+        <div class="slot grow"><img src="../photos/n050.jpg" alt=""></div>
+        <div class="slot grow"><img src="../photos/n230.jpg" alt=""></div>
       </div>
       <div class="cap"><b>THU 6 AUG</b> — Bags carried home; Lego construction began immediately.</div>
     </div>
@@ -595,10 +602,10 @@
   <div class="safe">
     <div class="col">
       <div class="row grow">
-        <div class="slot grow hero"><div><span class="tag">SLOT 6C</span><span class="want">BBQ at Michael &amp; Aisling's — the whole crowd</span></div></div>
+        <div class="slot grow hero"><img src="../photos/n218.jpg" alt=""></div>
       </div>
       <div class="row" style="height:2in;">
-        <div class="slot grow"><div><span class="tag">SLOT 6D</span><span class="want">BBQ candid — cousins at the table</span></div></div>
+        <div class="slot grow"><img src="../photos/n051.jpg" alt=""></div>
         <div class="quotecard grow" style="align-items:center;">
           <div style="display:flex;align-items:center;gap:.16in;">
             <svg width=".65in" height=".65in" viewBox="0 0 100 100" style="flex:none"><use href="#hooker"/></svg>
@@ -629,11 +636,12 @@
       </div>
       <div class="lede">Last full day, and the rounds complete: a day at
         Francis and Kate's at Bridgefield — which meant the week had
-        called into every single house. Cousins loose in the grass, one
-        big photo to wrangle, and the suitcases waiting at home.</div>
+        called into every single house. Goats to feed, cousins loose in
+        the grass, one big photo to wrangle, and the suitcases waiting
+        at home.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 7A</span><span class="want">Kids playing at Francis &amp; Kate's</span></div></div>
-        <div class="slot grow"><div><span class="tag">SLOT 7B</span><span class="want">Babies together — Ruth &amp; Caimin</span></div></div>
+        <div class="slot grow"><img src="../photos/n091.jpg" alt=""></div>
+        <div class="slot grow"><img src="../photos/n088.jpg" alt=""></div>
       </div>
       <div class="cap"><b>FRI 7 AUG</b> — Four houses in seven days: Cahertinna, Ballymore, Lurgan, Bridgefield. Full house.</div>
     </div>
@@ -644,11 +652,11 @@
   <div class="safe">
     <div class="col">
       <div class="row grow">
-        <div class="slot grow hero"><div><span class="tag">SLOT 7C</span><span class="want">Cousins in the grass — a candid from around the big photo</span></div></div>
+        <div class="slot grow hero"><img src="../photos/n232.jpg" alt=""></div>
       </div>
       <div class="grid2" style="height:2in;">
-        <div class="slot"><div><span class="tag">SLOT 7D</span><span class="want">Bridgefield candid</span></div></div>
-        <div class="slot"><div><span class="tag">SLOT 7E</span><span class="want">Golden-hour last-evening shot</span></div></div>
+        <div class="slot"><img src="../photos/n174.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n053.jpg" alt=""></div>
       </div>
     </div>
   </div>
@@ -674,7 +682,7 @@
 <div class="page">
   <div class="pageno-tag">cousins photo (hero)</div>
   <div class="bleedwrap">
-    <div class="slot hero"><div><span class="tag">THE BIG ONE · FULL BLEED</span><span class="want">The annual cousins photo — all ten in the grass at Bridgefield</span></div></div>
+    <div class="slot hero"><img src="../photos/n094.jpg" alt=""></div>
   </div>
 </div>
 
@@ -688,12 +696,12 @@
         <h2 style="font-size:24pt;">Little Moments</h2>
       </div>
       <div class="grid3 grow">
-        <div class="slot"><div><span class="tag">M1</span><span class="want">candid</span></div></div>
-        <div class="slot"><div><span class="tag">M2</span><span class="want">candid</span></div></div>
-        <div class="slot"><div><span class="tag">M3</span><span class="want">candid</span></div></div>
-        <div class="slot"><div><span class="tag">M4</span><span class="want">candid</span></div></div>
-        <div class="slot"><div><span class="tag">M5</span><span class="want">candid</span></div></div>
-        <div class="slot"><div><span class="tag">M6</span><span class="want">candid</span></div></div>
+        <div class="slot"><img src="../photos/n095.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n062.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n134.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n282.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n269.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n161.jpg" alt=""></div>
       </div>
       <div class="cap">The big days out made the itinerary; these made the week.</div>
     </div>
@@ -703,12 +711,12 @@
   <div class="pageno-tag">little moments</div>
   <div class="safe">
     <div class="grid3" style="height:100%;grid-template-rows:1fr 1fr 1fr;">
-      <div class="slot"><div><span class="tag">M7</span><span class="want">candid</span></div></div>
-      <div class="slot" style="grid-column:2/4;"><div><span class="tag">M8</span><span class="want">wide candid</span></div></div>
-      <div class="slot" style="grid-column:1/3;"><div><span class="tag">M9</span><span class="want">wide candid</span></div></div>
-      <div class="slot"><div><span class="tag">M10</span><span class="want">candid</span></div></div>
-      <div class="slot"><div><span class="tag">M11</span><span class="want">candid</span></div></div>
-      <div class="slot"><div><span class="tag">M12</span><span class="want">candid</span></div></div>
+      <div class="slot"><img src="../photos/n199.jpg" alt=""></div>
+      <div class="slot" style="grid-column:2/4;"><img src="../photos/n258.jpg" alt=""></div>
+      <div class="slot" style="grid-column:1/3;"><img src="../photos/n283.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n297.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n285.jpg" alt=""></div>
+      <div class="slot"><img src="../photos/n287.jpg" alt=""></div>
     </div>
   </div>
 </div>
@@ -740,10 +748,10 @@
     <div class="col">
       <div class="eyebrow" style="margin-bottom:.05in;">Photographic evidence</div>
       <div class="grid2 grow">
-        <div class="slot"><div><span class="tag">E1</span><span class="want">an actual sheep / tractor</span></div></div>
-        <div class="slot"><div><span class="tag">E2</span><span class="want">an actual rainbow</span></div></div>
-        <div class="slot"><div><span class="tag">E3</span><span class="want">red sails</span></div></div>
-        <div class="slot"><div><span class="tag">E4</span><span class="want">spotter in action (binoculars, pointing…)</span></div></div>
+        <div class="slot"><img src="../photos/n057.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n129.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n137.jpg" alt=""></div>
+        <div class="slot"><img src="../photos/n077.jpg" alt=""></div>
       </div>
     </div>
   </div>
@@ -759,15 +767,15 @@
         <h2 style="font-size:24pt;">In Their Own Words</h2>
       </div>
       <div class="quotecard">
-        <div class="slot"><span class="want">EVELYN</span></div>
+        <div class="slot"><img src="../photos/n297.jpg" alt=""></div>
         <div><div class="q">"…Evelyn's favourite thing about Ireland, in her own words…"</div><div class="qwho">EVELYN</div></div>
       </div>
       <div class="quotecard">
-        <div class="slot"><span class="want">MICHAEL</span></div>
+        <div class="slot"><img src="../photos/n282.jpg" alt=""></div>
         <div><div class="q">"…Michael's favourite thing, verbatim, however it comes out…"</div><div class="qwho">MICHAEL</div></div>
       </div>
       <div class="quotecard">
-        <div class="slot"><span class="want">CATHERINE</span></div>
+        <div class="slot"><img src="../photos/n269.jpg" alt=""></div>
         <div><div class="q">"…Catherine's favourite thing — the less edited the better…"</div><div class="qwho">CATHERINE</div></div>
       </div>
     </div>
@@ -807,8 +815,8 @@
         half twelve, and Dulles by tea-time — with sand still in the
         shoes and a bag full of shells and stories.</div>
       <div class="row grow">
-        <div class="slot grow"><div><span class="tag">SLOT 8A</span><span class="want">Goodbye at the farm — hugs at the gate</span></div></div>
-        <div class="slot grow"><div><span class="tag">SLOT 8B</span><span class="want">Plane window / sleeping traveller</span></div></div>
+        <div class="slot grow"><img src="../photos/n155.jpg" alt=""></div>
+        <div class="slot grow"><img src="../photos/n241.jpg" alt=""></div>
       </div>
       <div class="cap"><b>SAT 8 AUG</b> — EI 117, Dublin → Dulles. Until next summer, Ireland.</div>
     </div>
